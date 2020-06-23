@@ -11,6 +11,6 @@ $(document).ready(function(){
 
 function autoplay() {
   $('.carousel').carousel('next');
-  setTimeout(autoplay, 4500);
+  setTimeout(autoplay, 6000);
 }
 autoplay()   

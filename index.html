@@ -4,41 +4,49 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>drinkME</title>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300&family=Roboto:wght@300&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.98.2/css/materialize.min.css">
-  <link rel="stylesheet" href="https://fonts.googlealibs/animate.css/3.5.2/animate.min.csspis.com/icon?family=Material+Icons">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.5.2/animate.min.css">
   <link rel="stylesheet" href="assets/style.css">
 </head>
 <body>
-  <section class="black">
+  <!-- Carousel -->
+  <section>
     <div class="carousel carousel-slider" data-indicators="true">
+      <!-- Fixed site name and button -->
       <div class="carousel-fixed-item">
-        <div class="container">
-          <h2 class="white-text">drinkME</h2>
-          <a class="btn waves-effect white grey-text darken-text-2" href="https://codepen.io/collection/nbBqgY/" target="_blank">Search</a>
+        <div class="container logocontainer">
+          <h2>drinkME</h2>
+          <a class="btn waves-effect white grey-text darken-text-2">Search</a>
         </div>
       </div>
-      <div class="carousel-item red lighten-2 white-text" href="#one!">
-        <div class="container">
-          <h2>1. Find</h2>
-          <p class="white-text">Search our database of hundreds of coctails to find the perfect drink.</p>
+      <!-- Explore Slide -->
+      <div id="item-find" class="carousel-item">
+        <div id="find-imgcontainer" class="container imgcontainer">
+          <h2>Explore</h2>
+          <p>Search hundreds of coctails to find the perfect drink.</p>
+          <div id="cover-find" class="opaque-cover"></div>
+        </div>
+      </div>
+      <!-- Mix Slide -->
+      <div id="item-mix" class="carousel-item">
+        <div id="mix-imgcontainer" class="container imgcontainer">
+          <h2>Mix</h2>
+          <p>Find somewhere to buy ingredients with our store locator.</p>
+          <div id="cover-mix" class="opaque-cover"></div>
         </div>  
       </div>
-      <div class="carousel-item amber darken-2 white-text" href="#two!">
-        <div class="container">
-          <h2>2. Mix</h2>
-          <p class="white-text">Use our store locator to find locations to buy ingredients.</p>
-        </div>  
-      </div>
-      <div class="carousel-item green white-text" href="#three!">
-        <div class="container">
-          <h2>3. Enjoy</h2>
-          <p class="white-text">Follow the recipie and enjoy with friends.</p>
+      <!-- Enjoy Slide -->
+      <div id="item-enjoy" class="carousel-item">
+        <div id="enjoy-imgcontainer" class="container imgcontainer">
+          <h2>Enjoy</h2>
+          <p>Follow the recipe and enjoy with friends.</p>
+          <div id="cover-enjoy" class="opaque-cover"></div>
         </div>  
       </div>
     </div>
   </section>
-  </form>
+
   <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.98.2/js/materialize.min.js"></script>
   <script src="assets/display.js"></script>
