@@ -1,7 +1,103 @@
-.container {
+/* * General Styles */
+:root {
+  --header-font: 'Poppins', sans-serif;
+  --text-font: 'Roboto', sans-serif;
+  --dm-black: #1A1A1A;
+  --dm-charcoal: #0a0502;
+  --dm-darkbrown: #350703;
+  --dm-brown: #350703;
+  --dm-lightbrown: #6a1807;
+  --dm-darkorange: #a1360d;
+  --dm-orange: #a63e0e;
+  --dm-yellow: #e39d5a;
+  --dm-pink: #f8ccc6;
+  --dm-white: #E6E6E6;
+}
+
+h1, h2, h3, h4, h5, h6 {
+  font-family: var(--header-font);
+}
+p, a {
+  font-family: var(--text-font);
+}
+
+/* * Materialize Media Breakpoints */
+/* https://materializecss.com/grid.html#grid-responsive */
+@media only screen and (max-width: 1200px) {
+}
+@media only screen and (max-width: 991px) {
+  body .opaque-cover {
+    left: 7.5%;
+    width: 85%;
+  }
+}
+@media only screen and (max-width: 599px) {
+  body .opaque-cover {
+    left: 5%;
+    width: 90%;
+  }
+}
+
+/* * Carousel Styles */
+/* Project name and button */
+.logocontainer h2 {
+  color: var(--dm-white);
+  padding-left: 25px;
+  text-decoration: underline;
+}
+.logocontainer a {
+  margin-left: 25px;
+}
+/* Carousel Items */
+#item-find {
+  background-color: var(--dm-orange);
+  color: var(--dm-white)
+}
+#item-mix {
+  background-color: var(--dm-yellow);
+  color: var(--dm-white)
+}
+#item-enjoy {
+  background-color: var(--dm-pink);
+  color: var(--dm-white)
+}
+/* Images and content */
+.imgcontainer {
   height: 100%;
+  padding: 50px 0 0 30px;
 }
-.container h2 {
+#find-imgcontainer{
+  background-image: url("../images/find.jpg") !important;
+  background-size: cover;
+}
+#mix-imgcontainer{
+  background-image: url("../images/mix.jpg") !important;
+  background-size: cover;
+}
+#enjoy-imgcontainer{
+  background-image: url("../images/enjoy.jpg") !important;
+  background-size: cover;
+}
+.imgcontainer h2 {
   margin-top: 0px;
-  padding-top: 24.94px;
+  position: relative;
+  z-index: 2;
+  font-size: 2em !important;
 }
+.imgcontainer p {
+  position: relative;
+  z-index: 2;
+  font-size: 1.25em !important;
+  width: 45%;
+}
+/* Cover to make text readable */
+.opaque-cover {
+  position: absolute;
+  top: 0;
+  left: 15%;
+  width: 70%;
+  height: 100%;
+  background-color: var(--dm-black);
+  opacity: 0.6;
+}
+
