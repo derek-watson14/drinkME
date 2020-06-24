@@ -1,27 +1,20 @@
-// CAROUSEL
-$(document).ready(function(){
-  $('.carousel').carousel(
-  {
-    fullWidth: true,
+// On document load
+document.addEventListener('DOMContentLoaded', function() {
+  // Auto init Materialize
+  M.AutoInit();
+
+  // Carousel
+  var elem = document.querySelector('.carousel');
+  var instance = M.Carousel.init(elem, {
+    duration: 300,
     indicators: true,
-    duration: 100,
+    fullWidth: true,
+  });
+  function autoplay() {
+    instance.next();
+    setTimeout(autoplay, 5000)
   }
-  );
-  //parallex 
-  $('.parallax').parallax();   
+  autoplay();
 });
 
-function autoplay() {
-  $('.carousel').carousel('next');
-  setTimeout(autoplay, 6000);
-}
-autoplay()   
-
-// //text area#1
-// $('#cocktailsearch').val();
-//   M.textareaAutoResize($('#cocktailsearch'));
-
-//   //text area#2
-// $('#beersearch').val();
-// M.textareaAutoResize($('#beersearch'));
   
