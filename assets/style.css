@@ -64,7 +64,7 @@ nav .material-icons:hover {
   padding-left: 25px;
   text-decoration: underline;
 }
-.logocontainer a {
+.logocontainer .btn {
   margin-left: 25px;
 }
 /* Carousel Items */
