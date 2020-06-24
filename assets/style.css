@@ -14,28 +14,47 @@
   --dm-white: #E6E6E6;
 }
 
-h1, h2, h3, h4, h5, h6 {
+h1, h2, h3, h4, h5, h6, .brand-logo, .logo-font {
   font-family: var(--header-font);
 }
-p, a {
+p, a, .text-font {
   font-family: var(--text-font);
 }
 
-/* * Materialize Media Breakpoints */
-/* https://materializecss.com/grid.html#grid-responsive */
-@media only screen and (max-width: 1200px) {
+/* * NavBar */
+.nav-wrapper {
+  background-color: var(--dm-black);
+  border-bottom: 1px solid var(--dm-white);
 }
-@media only screen and (max-width: 991px) {
-  body .opaque-cover {
-    left: 7.5%;
-    width: 85%;
-  }
+nav .brand-logo {
+  text-decoration: underline;
+  padding: 0 35px;
 }
-@media only screen and (max-width: 599px) {
-  body .opaque-cover {
-    left: 5%;
-    width: 90%;
-  }
+nav .right {
+  padding: 0 20px;
+}
+nav .material-icons {
+  color: var(--dm-white)
+}
+nav .material-icons:hover {
+  color: white;
+}
+
+/* * Floating Nav */
+.btn-floating {
+  background-color: var(--dm-black);
+}
+#floatBtn-menu {
+  background-color: var(--dm-darkbrown);
+}
+#floatBtn-beer {
+  background-color: var(--dm-orange);
+}
+#floatBtn-cocktail {
+  background-color: var(--dm-yellow);
+}
+#floatBtn-home {
+  background-color: var(--dm-pink);
 }
 
 /* * Carousel Styles */
@@ -51,7 +70,7 @@ p, a {
 /* Carousel Items */
 #item-find {
   background-color: var(--dm-orange);
-  color: var(--dm-white)
+  color: var(--dm-white);
 }
 #item-mix {
   background-color: var(--dm-yellow);
@@ -101,11 +120,9 @@ p, a {
   opacity: 0.6;
 }
 
-/* Customize Parallax*/
-
+/* * Parallax Styles */
 .parallax-container {
-  height: "750px";
-  
+  height: 350px;
 }
 
 /* search bar*/
@@ -123,3 +140,22 @@ form.example button {
   border-left: none; /* Prevent double borders */
   cursor: pointer;
 }
+
+
+/* * Materialize Media Breakpoints */
+/* https://materializecss.com/grid.html#grid-responsive */
+@media only screen and (max-width: 1200px) {
+}
+@media only screen and (max-width: 991px) {
+  body .opaque-cover {
+    left: 7.5%;
+    width: 85%;
+  }
+}
+@media only screen and (max-width: 599px) {
+  body .opaque-cover {
+    left: 5%;
+    width: 90%;
+  }
+}
+
