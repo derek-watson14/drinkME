@@ -101,3 +101,25 @@ p, a {
   opacity: 0.6;
 }
 
+/* Customize Parallax*/
+
+.parallax-container {
+  height: "750px";
+  
+}
+
+/* search bar*/
+
+
+/* Style the submit button */
+form.example button {
+  float: left;
+  width: 20%;
+  padding: 10px;
+  background: #2196F3;
+  color: white;
+  font-size: 17px;
+  border: 1px solid grey;
+  border-left: none; /* Prevent double borders */
+  cursor: pointer;
+}

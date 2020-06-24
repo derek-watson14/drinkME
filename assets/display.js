@@ -7,6 +7,12 @@ $(document).ready(function(){
     duration: 100,
   }
   );
+  
+  //parallex 
+  $(document).ready(function(){
+    $('.parallax').parallax();
+  });
+       
 });
 
 function autoplay() {
@@ -14,3 +20,15 @@ function autoplay() {
   setTimeout(autoplay, 6000);
 }
 autoplay()   
+
+
+
+
+//text area#1
+$('#cocktailsearch').val();
+  M.textareaAutoResize($('#cocktailsearch'));
+
+  //text area#2
+$('#beersearch').val();
+M.textareaAutoResize($('#beersearch'));
+  
