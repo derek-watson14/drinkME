@@ -17,11 +17,11 @@ function autoplay() {
 }
 autoplay()   
 
-//text area#1
-$('#cocktailsearch').val();
-  M.textareaAutoResize($('#cocktailsearch'));
+// //text area#1
+// $('#cocktailsearch').val();
+//   M.textareaAutoResize($('#cocktailsearch'));
 
-  //text area#2
-$('#beersearch').val();
-M.textareaAutoResize($('#beersearch'));
+//   //text area#2
+// $('#beersearch').val();
+// M.textareaAutoResize($('#beersearch'));
   

@@ -125,7 +125,13 @@ nav .material-icons:hover {
   height: 350px;
 }
 
-/* search bar*/
+/* * Search Areas */
+.prefix {
+  margin-top: 10px;
+}
+.search-btn {
+  margin-top: 15px;
+}
 
 
 /* Style the submit button */
