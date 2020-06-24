@@ -16,7 +16,7 @@ function getBreweries(){
         method: "GET"
     }).then(function(breweries){
             breweries.forEach(function(brewery){
-                // var beerCard = 
+                var beerCard = $("<div class")
                 var name = $("<h3>")
                 name.text(brewery.name)
                 console.log(brewery.name)
