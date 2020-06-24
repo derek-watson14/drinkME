@@ -7,12 +7,8 @@ $(document).ready(function(){
     duration: 100,
   }
   );
-  
   //parallex 
-  $(document).ready(function(){
-    $('.parallax').parallax();
-  });
-       
+  $('.parallax').parallax();   
 });
 
 function autoplay() {
@@ -20,9 +16,6 @@ function autoplay() {
   setTimeout(autoplay, 6000);
 }
 autoplay()   
-
-
-
 
 //text area#1
 $('#cocktailsearch').val();

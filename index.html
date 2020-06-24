@@ -4,12 +4,29 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>drinkME</title>
+  <!-- Fonts -->
   <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300&family=Roboto:wght@300&display=swap" rel="stylesheet">
+  <!-- Icons -->
+  <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+  <!-- Materialize -->
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.98.2/css/materialize.min.css">
+  <!-- AnimateCSS -->
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.5.2/animate.min.css">
+  <!-- Custom Styles -->
   <link rel="stylesheet" href="assets/style.css">
 </head>
 <body>
+  <!-- Navbar -->
+  <nav>
+    <div class="nav-wrapper">
+      <a href="#!" class="brand-logo">drinkME</a>
+      <ul class="right hide-on-med-and-down">
+        <li><a href="#"><i class="material-icons">home</i></a></li>
+        <li><a href="#"><i class="material-icons">local_bar</i></a></li>
+        <li><a href="#"><i class="material-icons">local_cafe</i></a></li>
+      </ul>
+    </div>
+  </nav>
   <!-- Carousel -->
   <section>
     <div class="carousel carousel-slider" data-indicators="true">
@@ -46,13 +63,16 @@
       </div>
     </div>
   </section>
-  <br>
-  <br>
-  <br>
-  <br>
-
+  <!-- About Us -->
+  <div class="section about-container">
+    <div class="row container">
+      <h2 class="header">About Us</h2>
+      <p class="grey-text text-darken-3 lighten-3">.</p>
+    </div>
+  </div>
+  <!-- Cocktail Search -->
   <div class="parallax-container">
-    <div class="cocktails"><img src="images/man-night-bar-barman-110472.jpg"></div>
+    <div class="parallax cocktails"><img src="images/man-night-bar-barman-110472.jpg"></div>
   </div>
   <div class="section white">
     <div class="row container">
@@ -72,9 +92,9 @@
       </form>
     </div>
   </div>
-
+  <!-- Beer Search -->
   <div class="parallax-container">
-    <div class="beer"><img src="images/alcohol-bar-bartender-beer-274194.jpg"></div>
+    <div class="parallax beer"><img src="images/alcohol-bar-bartender-beer-274194.jpg"></div>
   </div>
   <div class="section white">
     <div class="row container">
@@ -93,12 +113,26 @@
         </div>
       </form>
     </div>
-      
+  </div>
+  <!-- Scroll Nav -->
+  <div class="fixed-action-btn">
+    <a class="btn-floating btn-large" id="floatBtn-menu">
+      <i class="large material-icons">menu</i>
+    </a>
+    <ul>
+      <li><a class="btn-floating" id="floatBtn-beer"><i class="material-icons">local_cafe</i></a></li>
+      <li><a class="btn-floating" id="floatBtn-cocktail"><i class="material-icons">local_bar</i></a></li>
+      <li><a class="btn-floating" id="floatBtn-home"><i class="material-icons">home</i></a></li>
+    </ul>
+  </div>
 
+  <!-- jQuery -->
   <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+  <!-- Materialize JS -->
   <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.98.2/js/materialize.min.js"></script>
+  <!-- Display Logic -->
   <script src="assets/display.js"></script>
-  <!-- <script src="assets/script.js"></script> -->
-  <script src="assets/script_beer.js"></script>
+  <!-- Database Logic -->
+  <script src="assets/script.js"></script>
 </body>
 </html>
