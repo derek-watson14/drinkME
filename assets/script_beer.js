@@ -127,5 +127,13 @@ $(button).click(function(event){
         method: "GET"
     }).then(function(breweries){
         var randomBeerDiv = $("<div class = 'row' >")
+
+        var name = $("<h6>")
+        name.text(breweries.name)
+
+        var tagline = $("<h6>")
+        tagline.text(breweries.tagline)
         
+        var image = ("<img>")
+        image.attr("href", breweries.image_url)
 })
