@@ -33,7 +33,7 @@ $.ajax({
     var ingredInd = 0;
     var ingredientString = "";
     for (i = 0; i < 4; i++) {
-        var drinkCard = $("<div class='card-horizontal col s12 m6'>");
+        var drinkCard = $("<div class='card horizontal  beer-card col s12 m6 drinkTile'>");
         var newDiv2 = $("<div class='card-image'>");
         var drinkImg = $(`<img src=${thumbnails[i]}>`);
         var newH5 = $("<p>");
@@ -45,7 +45,7 @@ $.ajax({
                 if (ingreds[j] !== "null") {
                     var currentVal = ingreds[j];
                     ingredientString += ingreds[j] + " ";
-                    //console.log(j);
+                    console.log(currentVal);
                     
                 }
             }
@@ -97,7 +97,7 @@ function getIngreds() {
 
             var result = "";
             if (measureAmt !== null) { //some amounts are null when all parts are equal
-             result += measureAmt + " of " + currentIng;
+             result += measureAmt + " : " + currentIng;
             } else {
             result += currentIng;
             }
@@ -109,6 +109,12 @@ function getIngreds() {
     })
 }
 //getBooze();
+
+
+$(".drinkTile").on("click", function(event) {
+    event.preventDefault();
+
+})
 
 //adds click listener, running methods with alcohol entered into search bar.
 $("#cocktailsearch-submit").on("click", function() {
