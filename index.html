@@ -17,16 +17,18 @@
 </head>
 <body>
   <!-- Navbar -->
-  <nav>
-    <div class="nav-wrapper">
-      <a id="home"  href="#home" class="brand-logo">drinkME</a>
-      <ul class="right hide-on-med-and-down">
-        <li><a href="#home"><i class="material-icons">home</i></a></li>
-        <li><a href="#cocktail"><i class="material-icons">local_bar</i></a></li>
-        <li><a href="#beer"><i class="material-icons">local_cafe</i></a></li>
-      </ul>
-    </div>
-  </nav>
+  <div class="navbar-fixed">
+    <nav>
+      <div class="nav-wrapper">
+        <a id="home"  href="#home" class="brand-logo">drinkME</a>
+        <ul class="right hide-on-med-and-down">
+          <li><a href="#home"><i class="material-icons">home</i></a></li>
+          <li><a href="#cocktail"><i class="material-icons">local_bar</i></a></li>
+          <li><a href="#beer"><i class="material-icons">local_cafe</i></a></li>
+        </ul>
+      </div>
+    </nav>
+  </div>
   <!-- Carousel -->
   <section class="container-flex">
       <div class="carousel carousel-slider noautoinit col s12">
@@ -85,17 +87,18 @@
   <div class="section white">
     <div class="row container">
       <h2 id="cocktail" class="header">Cocktails</h2>
-      <p class="grey-text text-darken-3 lighten-3">Create the perfect cocktail for you and your guest!</p>
+      <h6 class="grey-text text-darken-3 lighten-3">Create the perfect cocktail for you and your guest!</h6>
+      <p class="grey-text text-darken-3 lighten-3">Search a type of liquor to generate a list of cocktails.</p>
     </div>
     <div class="row">
       <form class="col s12">
         <div class="row">
-          <div class="input-field col s7 offset-s1">
+          <div class="cocktail-inputs input-field col s7 offset-s1 offset-m2">
             <i class="material-icons prefix">local_bar</i>
             <input id="cocktailsearch" type="text">
             <label for="cocktailsearch">Search for cocktails (alcohol type)</label>
           </div>
-          <div class="col s2">
+          <div class="col s1">
             <a id="cocktailsearch-submit" class="search-btn btn waves-effect white grey-text darken-text-2">Search</a>
           </div>
         </div>
@@ -112,17 +115,20 @@
   <div class="section white">
     <div class="row container">
       <h2 id="beer" class="header">Beer</h2>
-      <p class="grey-text text-darken-3 lighten-3">Choose the brew that fits your mood!</p>
+      <h6 class="grey-text text-darken-3 lighten-3">Choose the brew that fits your mood!</h6>
+      <p class="grey-text text-darken-3 lighten-3">
+        Search a city or zip code to discover breweries in that area.
+      </p>
     </div>
     <div class="row">
       <form class="col s12">
         <div class="row">
-          <div class="input-field col s7 offset-s1">
+          <div class="beer-inputs input-field col s7 offset-s1 offset-m2">
             <i class="material-icons prefix">local_cafe</i>
             <input id="beersearch" type="text">
             <label for="beersearch">Find a brewery (zip code or city)</label>
           </div>
-          <div class="col s2">
+          <div class="col s1">
             <a id="beersearch-submit" class="search-btn btn waves-effect white grey-text darken-text-2">Search</a>
           </div>
         </div>

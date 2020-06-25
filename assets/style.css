@@ -28,7 +28,7 @@ p, a, .text-font {
 
 /* * NavBar */
 .nav-wrapper {
-  background-color: var(--dm-black);
+  background-color: var(--dm-charcoal);
   border-bottom: 1px solid var(--dm-white);
 }
 nav .brand-logo {
@@ -45,7 +45,7 @@ nav .material-icons:hover {
   color: white;
 }
 
-/* * Floating Nav */
+/* * Corner Nav */
 .btn-floating {
   background-color: var(--dm-black);
 }
@@ -137,19 +137,45 @@ nav .material-icons:hover {
 .search-btn {
   margin-top: 15px;
 }
+/* * Input fields */
+/* label focus color */
+.beer-inputs input[type=text]:focus + label {
+  color: var(--dm-orange) !important;
+}
+/* label underline focus color */
+.beer-inputs input[type=text]:focus {
+  border-bottom: 1px solid var(--dm-orange) !important;
+  box-shadow: 0 1px 0 0 var(--dm-orange) !important;
+}
+/* icon prefix focus color */
+.beer-inputs .prefix.active {
+  color: var(--dm-orange);
+}
+/* label focus color */
+.cocktail-inputs input[type=text]:focus + label {
+  color: var(--dm-yellow) !important;
+}
+/* label underline focus color */
+.cocktail-inputs input[type=text]:focus {
+  border-bottom: 1px solid var(--dm-yellow) !important;
+  box-shadow: 0 1px 0 0 var(--dm-yellow) !important;
+}
+/* icon prefix focus color */
+.cocktail-inputs .prefix.active {
+  color: var(--dm-yellow);
+}
+#cocktailsearch-submit.search-btn {
+  background-color: var(--dm-yellow) !important;
+}
+#beersearch-submit.search-btn {
+  background-color: var(--dm-orange) !important;
+}
 
-
-/* Style the submit button */
-form.example button {
-  float: left;
-  width: 20%;
-  padding: 10px;
-  background: #2196F3;
-  color: white;
-  font-size: 17px;
-  border: 1px solid grey;
-  border-left: none; /* Prevent double borders */
-  cursor: pointer;
+.waves-effect#cocktailsearch-submit .waves-ripple {
+   background-color: rgba(227, 157, 90, 0.65);
+}
+.waves-effect#beersearch-submit .waves-ripple {
+   background-color: rgba(166, 62, 14, 0.65);
 }
 
 
