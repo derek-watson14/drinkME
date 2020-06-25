@@ -17,6 +17,7 @@
 h1, h2, h3, h4, h5, h6, .brand-logo, .logo-font {
   font-family: var(--header-font);
 }
+
 p, a, .text-font {
   font-family: var(--text-font);
 }
@@ -85,6 +86,8 @@ nav .material-icons:hover {
   height: 100%;
   padding: 50px 0 0 30px;
 }
+
+
 #find-imgcontainer{
   background-image: url("../images/find.jpg") !important;
   background-size: cover;
@@ -145,6 +148,12 @@ form.example button {
   border: 1px solid grey;
   border-left: none; /* Prevent double borders */
   cursor: pointer;
+}
+
+/* beer and cocktail cards */
+.beer-card{
+  height: 200px;
+  overflow: scroll 
 }
 
 
