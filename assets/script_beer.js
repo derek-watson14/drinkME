@@ -1,6 +1,7 @@
 
 var beerListContainer = $("#beerlist")
 
+
 function getBreweriesCode(beer){
     var queryURLBeerCode = "https://api.openbrewerydb.org/breweries?by_postal=" + beer
     $.ajax({
@@ -118,4 +119,13 @@ $("#beersearch-submit").click(function(event){
 })
 
 //when you click on button, you are directed to a random beer. when you enter in the input field, you can search for a brewery near you by city or postal code  
-// https://api.punkapi.com/v2/beers/random
+$(button).click(function(event){
+    var queryURLBeerRandom = "https://api.punkapi.com/v2/beers/random"
+    event.preventDefault();
+    $.ajax({
+        url: queryURLBeerRandom,
+        method: "GET"
+    }).then(function(breweries){
+        var randomBeerDiv = $("<div class = 'row' >")
+        
+})
