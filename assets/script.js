@@ -28,15 +28,24 @@ $.ajax({
         //console.log(thumbnails);
          //makes first drink appear at index '0' in thumbnails
     }
-    console.log(ingreds + " in getbooze");
+    //console.log(ingreds + " in getbooze");
     var newRow = $("<row>");
+    var ingredInd = 0;
     for (i = 0; i < 4; i++) {
         var drinkCard = $("<div class='card-horizontal col s12 m6'>");
         var newDiv2 = $("<div class='card-image'>");
         var drinkImg = $(`<img src=${thumbnails[i]}>`);
         var newH5 = $("<p>");
             newH5.html(drinks[i]);
-            console.log(drinks[i]);
+            //console.log(drinks[i]);
+            for (j = ingredInd; j < ingredInd + 15; j++) { //0, til 14, exits, updates ingredInd by 15 to start at index 15
+                var ingredientString = "";
+                if (ingreds[j] !== null) {
+                    ingredientString += ingreds[j];
+                    console.log(ingredientString);
+                }
+            }
+            ingredInd += 15;
         //drinkImg.attr("src", thumbnails[i]);
         //console.log(thumbnails[i]);
         newDiv2.append(drinkImg, newH5);
@@ -44,7 +53,7 @@ $.ajax({
         newRow.append(drinkCard);
         
         //should iterate over the ingreds and add them to the image, might include null
-        console.log(ingreds[0] + " ingredients currently at j");
+        //console.log(ingreds[0] + " ingredients currently at j");
         // for (j = 0; j < ingreds.length; j+= 15) {
         //     // if (ingreds[j] !== null) {
         //     var newH5 = $("<h5>");
@@ -91,7 +100,7 @@ function getIngreds() {
             ingreds.push(result);
             
         }
-        console.log(ingreds);
+        //console.log(ingreds);
         //console.log(ingreds);
     })
 }
@@ -101,9 +110,9 @@ function getIngreds() {
 $("#cocktailsearch-submit").on("click", function() {
     event.preventDefault();
     $("#cocktaillist").empty();
-    console.log("clicked");
+    //console.log("clicked");
     alcohol = $("#cocktailsearch").val();
-    console.log(alcohol + " alcohol val");
+    //console.log(alcohol + " alcohol val");
     
 
     drinks = [];
