@@ -38,11 +38,11 @@ $.ajax({
         var newH5 = $("<p>");
             newH5.html(drinks[i]);
             //console.log(drinks[i]);
+            var ingredientString = "";
             for (j = ingredInd; j < ingredInd + 15; j++) { //0, til 14, exits, updates ingredInd by 15 to start at index 15
-                var ingredientString = "";
-                if (ingreds[j] !== null) {
-                    ingredientString += ingreds[j];
-                    console.log(ingredientString);
+                if (ingreds[j] !== "null") {
+                    //ingredientString += ingreds[j] + " ";
+                    console.log(ingreds[j]);
                 }
             }
             ingredInd += 15;
