@@ -39,7 +39,7 @@ function getBreweriesCode(beer){
                 url.text(brewery.website_url)
                 // console.log("url: " + brewery.website_url)
 
-                var beerCard = $("<div class='card col s12 l3'>");
+                var beerCard = $("<div class='card col s12 l3 card-action beer-card'>");
                 beerCard.append(name, city, street, state, phone, url);
 
                 beerDiv.append(beerCard)
@@ -59,9 +59,16 @@ function getBreweriesCity(beer){
             var name = $("<a>")
             name.text(brewery.name)
             name.attr("href", brewery.website_url)
-            // $("name").click(function(){
-            // })
-            // console.log(brewery.name)
+            name.css("color", "#e39d5a")
+            
+            $(document).ready(function(){
+                $("a").hover(function(){
+                    $(this).css("color", "#f8ccc6");
+                }, function (){
+                    $(this).css("color", "#6a1807");
+                
+                });
+            });
             
             var city = $("<h6>")
             city.text(brewery.city)
@@ -97,7 +104,7 @@ $("#beersearch-submit").click(function(event){
         getBreweriesCode(beerInput);
         // console.log("integer")
     }
-    $("#beersearch")[0].reset();
+    // $("#beersearch")[0].reset();
 })
 
 //when you click on button, you are directed to a random beer. when you enter in the input field, you can search for a brewery near you by city or postal code  
