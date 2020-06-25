@@ -16,7 +16,7 @@ $.ajax({
   url: queryURL,
   method: "GET"
 }).then(function(response) {
-    console.log(response);
+    //console.log(response);
     for (i = 0; i < 4; i++) { //generate 12 tiles with content from api
         currentDrink = response.drinks[i].strDrink; 
        //console.log(currentDrink + " currentDrink");
@@ -31,6 +31,7 @@ $.ajax({
     //console.log(ingreds + " in getbooze");
     var newRow = $("<row>");
     var ingredInd = 0;
+    var ingredientString = "";
     for (i = 0; i < 4; i++) {
         var drinkCard = $("<div class='card-horizontal col s12 m6'>");
         var newDiv2 = $("<div class='card-image'>");
@@ -38,13 +39,20 @@ $.ajax({
         var newH5 = $("<p>");
             newH5.html(drinks[i]);
             //console.log(drinks[i]);
-            var ingredientString = "";
+            ingredientString = "";
             for (j = ingredInd; j < ingredInd + 15; j++) { //0, til 14, exits, updates ingredInd by 15 to start at index 15
+                
                 if (ingreds[j] !== "null") {
-                    //ingredientString += ingreds[j] + " ";
-                    console.log(ingreds[j]);
+                    var currentVal = ingreds[j];
+                    ingredientString += ingreds[j] + " ";
+                    //console.log(j);
+                    
                 }
             }
+            console.log(ingredientString);
+            ingredientString = "";
+            var newp = $("<p>");
+            newp.html(drinks[i]);
             ingredInd += 15;
         //drinkImg.attr("src", thumbnails[i]);
         //console.log(thumbnails[i]);
@@ -63,12 +71,8 @@ $.ajax({
         // }
             // }
         }
-        // newDiv1.append(newDiv2);
-        // var drinkImg = $("<img>");
-        // drinkImg.attr("src", "https://lorempixel.com/100/190/nature/6");
-        // newDiv2.append(drinkImg);
-        
-        ingreds = [];
+        console.log("hereeee");
+        //ingreds = [];
 
     
    var cocktaillist = $("#cocktaillist")
@@ -100,7 +104,7 @@ function getIngreds() {
             ingreds.push(result);
             
         }
-        //console.log(ingreds);
+        console.log(ingreds);
         //console.log(ingreds);
     })
 }
