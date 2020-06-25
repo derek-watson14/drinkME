@@ -19,7 +19,7 @@ $.ajax({
     console.log(response);
     for (i = 0; i < 4; i++) { //generate 12 tiles with content from api
         currentDrink = response.drinks[i].strDrink; 
-        console.log(currentDrink + " currentDrink");
+       //console.log(currentDrink + " currentDrink");
         drinks.push(currentDrink);
         var imgUrl = response.drinks[i].strDrinkThumb + "/preview";
         thumbnails.push(imgUrl);// loops through all 12 drink tiles
@@ -28,7 +28,43 @@ $.ajax({
         //console.log(thumbnails);
          //makes first drink appear at index '0' in thumbnails
     }
-    console.log(drinks);
+    console.log(ingreds + " in getbooze");
+    var newRow = $("<row>");
+    for (i = 0; i < 4; i++) {
+        var drinkCard = $("<div class='card-horizontal col s12 m6'>");
+        var newDiv2 = $("<div class='card-image'>");
+        var drinkImg = $(`<img src=${thumbnails[i]}>`);
+        var newH5 = $("<p>");
+            newH5.html(drinks[i]);
+            console.log(drinks[i]);
+        //drinkImg.attr("src", thumbnails[i]);
+        //console.log(thumbnails[i]);
+        newDiv2.append(drinkImg, newH5);
+        drinkCard.append(newDiv2);
+        newRow.append(drinkCard);
+        
+        //should iterate over the ingreds and add them to the image, might include null
+        console.log(ingreds[0] + " ingredients currently at j");
+        // for (j = 0; j < ingreds.length; j+= 15) {
+        //     // if (ingreds[j] !== null) {
+        //     var newH5 = $("<h5>");
+        //     newH5.html(ingreds[j]);
+        //     console.log(ingreds[j]);
+        //     newDiv2.append(newH5);
+        // }
+            // }
+        }
+        // newDiv1.append(newDiv2);
+        // var drinkImg = $("<img>");
+        // drinkImg.attr("src", "https://lorempixel.com/100/190/nature/6");
+        // newDiv2.append(drinkImg);
+        
+        ingreds = [];
+
+    
+   var cocktaillist = $("#cocktaillist")
+    $(cocktaillist).append(newRow);
+    //console.log(drinks);
 });
 }
 
@@ -41,7 +77,7 @@ function getIngreds() {
         //console.log(response);
         var data = response.drinks[0];
         response.drinks[0].strIngredient1;
-        for (i = 1; i < 5; i++) {
+        for (i = 1; i <= 15; i++) { //iterates over 15 ingredients and values
 
             var currentIng = response.drinks[0]["strIngredient" + i];
             var measureAmt = response.drinks[0]["strMeasure" + i];
@@ -56,6 +92,7 @@ function getIngreds() {
             
         }
         console.log(ingreds);
+        //console.log(ingreds);
     })
 }
 //getBooze();
@@ -67,26 +104,15 @@ $("#cocktailsearch-submit").on("click", function() {
     console.log("clicked");
     alcohol = $("#cocktailsearch").val();
     console.log(alcohol + " alcohol val");
+    
+
+    drinks = [];
+    thumbnails = [];
+    ingreds = [];
     getBooze();
     // getIngreds();
 
-    var newRow = $("<row>");
-    for (i = 0; i < 4; i++) {
-        var drinkCard = $("<div class='card-horizontal col s12 m6'>");
-        var newDiv2 = $("<div class='card-image'>");
-        var drinkImg = $(`<img src=${thumbnails[i]}>`);
-        //drinkImg.attr("src", thumbnails[i]);
-        console.log(thumbnails[i]);
-        newDiv2.append(drinkImg);
-        drinkCard.append(newDiv2);
-        // newDiv1.append(newDiv2);
-        // var drinkImg = $("<img>");
-        // drinkImg.attr("src", "https://lorempixel.com/100/190/nature/6");
-        // newDiv2.append(drinkImg);
-        newRow.append(drinkCard);
-    }
-   var cocktaillist = $("#cocktaillist")
-    $(cocktaillist).append(newRow);
+    
     // $("#cocktaillist").append(newRow);
     // var newDiv = $("<div>"); // append to section with right ID
     // newDiv.addClass("col s12 m4");
