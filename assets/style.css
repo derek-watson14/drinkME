@@ -56,14 +56,30 @@ nav .material-icons:hover {
 #floatBtn-menu {
   background-color: var(--dm-darkbrown);
 }
+#floatBtn-menu:hover {
+  background-color: var(--dm-darkbrown);
+  filter: brightness(130%)
+}
 #floatBtn-beer {
   background-color: var(--dm-orange);
+}
+#floatBtn-beer:hover {
+  background-color: var(--dm-orange);
+  filter: brightness(115%)
 }
 #floatBtn-cocktail {
   background-color: var(--dm-yellow);
 }
+#floatBtn-cocktail:hover {
+  background-color: var(--dm-yellow);
+  filter: brightness(115%)
+}
 #floatBtn-home {
   background-color: var(--dm-pink);
+}
+#floatBtn-home:hover {
+  background-color: var(--dm-pink);
+  filter: brightness(104%)
 }
 
 /* * Carousel Styles */
