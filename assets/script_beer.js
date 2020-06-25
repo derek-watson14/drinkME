@@ -101,4 +101,5 @@ $("#beersearch-submit").click(function(event){
     $("#beersearch")[0].reset();
 })
 
-
+//when you click on button, you are directed to a random beer. when you enter in the input field, you can search for a brewery near you by city or postal code  
+// https://api.punkapi.com/v2/beers/random
