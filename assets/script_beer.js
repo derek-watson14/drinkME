@@ -10,41 +10,47 @@ function getBreweriesCode(beer){
         // console.log(breweries)
         var beerDiv = $("<div class = 'row' >")
             breweries.forEach(function(brewery){
-                
-                var name = $("<h7>")
+                var name = $("<a>")
                 name.text(brewery.name)
-                // console.log("name: " + brewery.name)
+                name.attr("href", brewery.website_url)
+                name.css("color", "#e39d5a")
+            
+                $(document).ready(function(){
+                    $("a").hover(function(){
+                    $(this).css("color", "#f8ccc6");
+                    }, function (){
+                        $(this).css("color", "#6a1807");
+                
+                    });
+                });
 
                 // var breweryType = $("<h7>")
                 // breweryType.text("type: " + brewery.brewery_type)
                 // console.log("type: " + brewery.brewery_type)
                 
-                var city = $("<h7>")
+                var city = $("<h6>")
                 city.text(brewery.city)
                 // console.log("city: " + brewery.city)
 
-                var street = $("<h7>")
+                var street = $("<h6>")
                 street.text(brewery.street)
                 // console.log("street: " + brewery.street)
 
-                var state = $("<h7>")
+                var state = $("<h6>")
                 state.text(brewery.state)
                 // console.log("state: " + brewery.state)
 
-                var phone = $("<h7>")
+                var phone = $("<h6>")
                 phone.text(brewery.phone)
                 // console.log("phone: " + brewery.phone)
 
-                var url = $("<h7>")
-                url.text(brewery.website_url)
-                // console.log("url: " + brewery.website_url)
-
                 var beerCard = $("<div class='card col s12 l3 card-action beer-card'>");
-                beerCard.append(name, city, street, state, phone, url);
+                beerCard.append(name, city, street, state, phone);
 
                 beerDiv.append(beerCard)
-                beerListContainer.html(beerDiv)
+                
             })
+            beerListContainer.html(beerDiv)
     })  
 }
 
@@ -82,14 +88,18 @@ function getBreweriesCity(beer){
             state.text(brewery.state)
             // console.log(brewery.state)
 
+            var phone = $("<h6>")
+            phone.text(brewery.phone)
+            // console.log("phone: " + brewery.phone)
+
             var beerCard = $("<div class='card col s12 l3 card-action beer-card'>");
-            beerCard.append(name,city,street,state);
+            beerCard.append(name,city,street,state, phone);
 
             beerDiv.append(beerCard)
             
             })
             beerListContainer.html(beerDiv)
-        })
+    })
 }
 
 $("#beersearch-submit").click(function(event){
