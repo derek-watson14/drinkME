@@ -135,9 +135,13 @@ nav .material-icons:hover {
   margin-top: 6px;
 }
 .search-btn {
-  margin-top: 15px;
+  margin-top: 18px;
 }
 /* * Input fields */
+.center-form {
+  display: flex;
+  justify-content: center;
+}
 /* label focus color */
 .beer-inputs input[type=text]:focus + label {
   color: var(--dm-orange) !important;
