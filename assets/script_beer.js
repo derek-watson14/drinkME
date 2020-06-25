@@ -39,7 +39,7 @@ function getBreweriesCode(beer){
                 url.text(brewery.website_url)
                 // console.log("url: " + brewery.website_url)
 
-                var beerCard = $("<div class='card col s12 m3'>");
+                var beerCard = $("<div class='card col s12 l3'>");
                 beerCard.append(name, city, street, state, phone, url);
 
                 beerDiv.append(beerCard)
@@ -56,33 +56,32 @@ function getBreweriesCity(beer){
         }).then(function(breweries){
             var beerDiv = $("<div class = 'row' >")
             breweries.forEach(function(brewery){
-            var name = $("<h7>")
+            var name = $("<a>")
             name.text(brewery.name)
+            name.attr("href", brewery.website_url)
+            // $("name").click(function(){
+            // })
             // console.log(brewery.name)
             
-            var city = $("<h7>")
+            var city = $("<h6>")
             city.text(brewery.city)
             // console.log(brewery.city)
 
-            var street = $("<h7>")
+            var street = $("<h6>")
             street.text(brewery.street)
             // console.log(brewery.street)
 
-            var state = $("<h7>")
+            var state = $("<h6>")
             state.text(brewery.state)
             // console.log(brewery.state)
 
-            var url = $("<h7>")
-            url.text(brewery.website_url)
-            url.attr("href", brewery.website_url)
-            // console.log(brewery.website_url)
-
-            var beerCard = $("<div class='card col s12 m3'>");
-            beerCard.append(name,city,street,state,url);
+            var beerCard = $("<div class='card col s12 l3 card-action beer-card'>");
+            beerCard.append(name,city,street,state);
 
             beerDiv.append(beerCard)
-            beerListContainer.html(beerDiv)
+            
             })
+            beerListContainer.html(beerDiv)
         })
 }
 
