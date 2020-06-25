@@ -115,28 +115,28 @@ $("#beersearch-submit").click(function(event){
         getBreweriesCode(beerInput);
         // console.log("integer")
     }
-    // $("#beersearch")[0].reset();
+    $("#beersearch").empty();
 })
 
 //when you click on button, you are directed to a random beer. when you enter in the input field, you can search for a brewery near you by city or postal code  
-$(button).click(function(event){
-    var queryURLBeerRandom = "https://api.punkapi.com/v2/beers/random"
-    event.preventDefault();
-    $.ajax({
-        url: queryURLBeerRandom,
-        method: "GET"
-    }).then(function(breweries){
-        var randomBeerDiv = $("<div class = 'row' >")
+// $(button).click(function(event){
+//     var queryURLBeerRandom = "https://api.punkapi.com/v2/beers/random"
+//     event.preventDefault();
+//     $.ajax({
+//         url: queryURLBeerRandom,
+//         method: "GET"
+//     }).then(function(breweries){
+//         var randomBeerDiv = $("<div class = 'row' >")
 
-        var name = $("<h6>")
-        name.text(breweries.name)
+//         var name = $("<h6>")
+//         name.text(breweries.name)
 
-        var tagline = $("<h6>")
-        tagline.text(breweries.tagline)
+//         var tagline = $("<h6>")
+//         tagline.text(breweries.tagline)
 
-        var description = $("<h6>")
-        description.text(breweries.abv)
+//         var description = $("<h6>")
+//         description.text(breweries.abv)
         
-        var image = ("<img>")
-        image.attr("href", breweries.image_url)
-})
+//         var image = ("<img>")
+//         image.attr("href", breweries.image_url)
+// })
