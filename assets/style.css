@@ -145,6 +145,9 @@ nav .material-icons:hover {
   display: flex;
   justify-content: center;
 }
+.row .input-field {
+  padding-left: 0;
+}
 /* label focus color */
 .beer-inputs input[type=text]:focus + label {
   color: var(--dm-orange) !important;
