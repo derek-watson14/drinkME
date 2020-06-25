@@ -132,7 +132,7 @@ nav .material-icons:hover {
 
 /* * Search Areas */
 .prefix {
-  margin-top: 10px;
+  margin-top: 6px;
 }
 .search-btn {
   margin-top: 15px;
@@ -166,16 +166,11 @@ nav .material-icons:hover {
 }
 #cocktailsearch-submit.search-btn {
   background-color: var(--dm-yellow) !important;
+  color: white !important;
 }
 #beersearch-submit.search-btn {
   background-color: var(--dm-orange) !important;
-}
-
-.waves-effect#cocktailsearch-submit .waves-ripple {
-   background-color: rgba(227, 157, 90, 0.65);
-}
-.waves-effect#beersearch-submit .waves-ripple {
-   background-color: rgba(166, 62, 14, 0.65);
+  color: white !important;
 }
 
 
