@@ -11,35 +11,35 @@ function getBreweriesCode(beer){
         var beerDiv = $("<div class = 'row' >")
             breweries.forEach(function(brewery){
                 
-                var name = $("<h3>")
+                var name = $("<h7>")
                 name.text(brewery.name)
                 // console.log("name: " + brewery.name)
 
-                // var breweryType = $("<h3>")
+                // var breweryType = $("<h7>")
                 // breweryType.text("type: " + brewery.brewery_type)
                 // console.log("type: " + brewery.brewery_type)
                 
-                var city = $("<h3>")
+                var city = $("<h7>")
                 city.text(brewery.city)
                 // console.log("city: " + brewery.city)
 
-                var street = $("<h3>")
+                var street = $("<h7>")
                 street.text(brewery.street)
                 // console.log("street: " + brewery.street)
 
-                var state = $("<h3>")
+                var state = $("<h7>")
                 state.text(brewery.state)
                 // console.log("state: " + brewery.state)
 
-                var phone = $("<h3>")
+                var phone = $("<h7>")
                 phone.text(brewery.phone)
                 // console.log("phone: " + brewery.phone)
 
-                var url = $("<h3>")
+                var url = $("<h7>")
                 url.text(brewery.website_url)
                 // console.log("url: " + brewery.website_url)
 
-                var beerCard = $("<div class='card'>");
+                var beerCard = $("<div class='card col s12 m3'>");
                 beerCard.append(name, city, street, state, phone, url);
 
                 beerDiv.append(beerCard)
@@ -56,28 +56,28 @@ function getBreweriesCity(beer){
         }).then(function(breweries){
             var beerDiv = $("<div class = 'row' >")
             breweries.forEach(function(brewery){
-            var name = $("<h3>")
+            var name = $("<h7>")
             name.text(brewery.name)
             // console.log(brewery.name)
             
-            var city = $("<h3>")
+            var city = $("<h7>")
             city.text(brewery.city)
             // console.log(brewery.city)
 
-            var street = $("<h3>")
+            var street = $("<h7>")
             street.text(brewery.street)
             // console.log(brewery.street)
 
-            var state = $("<h3>")
+            var state = $("<h7>")
             state.text(brewery.state)
             // console.log(brewery.state)
 
-            var url = $("<h3>")
+            var url = $("<h7>")
             url.text(brewery.website_url)
             url.attr("href", brewery.website_url)
             // console.log(brewery.website_url)
 
-            var beerCard = $("<div class='card'>");
+            var beerCard = $("<div class='card col s12 m3'>");
             beerCard.append(name,city,street,state,url);
 
             beerDiv.append(beerCard)
