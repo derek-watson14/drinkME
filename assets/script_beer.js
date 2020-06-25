@@ -133,6 +133,9 @@ $(button).click(function(event){
 
         var tagline = $("<h6>")
         tagline.text(breweries.tagline)
+
+        var description = $("<h6>")
+        description.text(breweries.abv)
         
         var image = ("<img>")
         image.attr("href", breweries.image_url)
