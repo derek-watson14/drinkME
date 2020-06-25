@@ -20,9 +20,5 @@ document.addEventListener('DOMContentLoaded', function() {
 
 
 
-$("#floatBtn-beer").click(function(event){
-  event.preventDefault();
-  console.log("hi")
-  
-})
+
   
