@@ -14,6 +14,11 @@
   --dm-white: #E6E6E6;
 }
 
+.make-logo {
+  font-family: var(--header-font);
+  text-decoration: underline;
+}
+
 h1, h2, h3, h4, h5, h6, .brand-logo, .logo-font {
   font-family: var(--header-font);
 }

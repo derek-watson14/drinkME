@@ -68,7 +68,14 @@
   <div class="section about-container">
     <div class="row container">
       <h2 class="header">About Us</h2>
-      <p class="grey-text text-darken-3 lighten-3">.</p>
+      <p class="grey-text text-darken-3 lighten-3">
+        Don’t feel like going out to a bar or restaurant with your friends to grab a drink?
+        Go ahead and invite them over! No stress if you don’t know what drink 
+        to make or how to make it, <span class="make-logo">drinkME</span> allows you to find the drink that fits the mood
+        by giving you the ability to generate recipes on the fly. If you're not in the mood for cocktails, we can
+        also help you find the perfect beer so you can be on your way to a night full of
+        memories!
+      </p>
     </div>
   </div>
   <!-- Cocktail Search -->
@@ -83,12 +90,14 @@
     <div class="row">
       <form class="col s12">
         <div class="row">
-          <div class="input-field col s12 m6 offset-m2">
+          <div class="input-field col s7 offset-s1">
             <i class="material-icons prefix">local_bar</i>
             <input id="cocktailsearch" type="text">
             <label for="cocktailsearch">Search for cocktails</label>
           </div>
-          <a id="cocktailsearch-submit" class="search-btn btn waves-effect white grey-text darken-text-2">Search</a>
+          <div class="col s2">
+            <a id="cocktailsearch-submit" class="search-btn btn waves-effect white grey-text darken-text-2">Search</a>
+          </div>
         </div>
       </form>
     </div>
@@ -108,17 +117,20 @@
     <div class="row">
       <form class="col s12">
         <div class="row">
-          <div class="input-field col s12 m6 offset-m2">
+          <div class="input-field col s7 offset-s1">
             <i class="material-icons prefix">local_cafe</i>
             <input id="beersearch" type="text">
             <label for="beersearch">Find a brewery</label>
           </div>
-          <a id="beersearch-submit" class="search-btn btn waves-effect white grey-text darken-text-2">Search</a>
+          <div class="col s2">
+            <a id="beersearch-submit" class="search-btn btn waves-effect white grey-text darken-text-2">Search</a>
+          </div>
         </div>
       </form>
     </div>
     <div class="row">
-      <div class="container" id= "beerlist"></div>
+      <div class="container" id= "beerlist">
+      </div>
     </div>
   </div>
   <!-- Scroll Nav -->
