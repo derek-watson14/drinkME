@@ -1,38 +1,105 @@
-var city = "seattle";
-var code = "98101";
-var tag = "patio";
-var beerInput = $(input)
 
-function getBreweries(){
-    // if input int run this code Code input === int(input())
-    if(beerInput === int(beerInput())){
-    var queryURLBeerCode = "https://api.openbrewerydb.org/breweries?by_postal=" + code
-    console.log(queryURLBeerCode)
-    
+var beerListContainer = $("#beerlist")
+
+function getBreweriesCode(beer){
+    var queryURLBeerCode = "https://api.openbrewerydb.org/breweries?by_postal=" + beer
     $.ajax({
         url: queryURLBeerCode,
         method: "GET"
     }).then(function(breweries){
+        // console.log(breweries)
+        var beerDiv = $("<div class = 'row' >")
             breweries.forEach(function(brewery){
-                var name = brewery.name
-                console.log(brewery.name)
+                
+                var name = $("<h3>")
+                name.text(brewery.name)
+                // console.log("name: " + brewery.name)
 
-                var city = brewery.city
-                console.log(brewery.city)
+                // var breweryType = $("<h3>")
+                // breweryType.text("type: " + brewery.brewery_type)
+                // console.log("type: " + brewery.brewery_type)
+                
+                var city = $("<h3>")
+                city.text(brewery.city)
+                // console.log("city: " + brewery.city)
 
-                var street = brewery.street
-                console.log(brewery.street)
+                var street = $("<h3>")
+                street.text(brewery.street)
+                // console.log("street: " + brewery.street)
 
-                var url = brewery.website_url
-                console.log(brewery.website_url)
+                var state = $("<h3>")
+                state.text(brewery.state)
+                // console.log("state: " + brewery.state)
+
+                var phone = $("<h3>")
+                phone.text(brewery.phone)
+                // console.log("phone: " + brewery.phone)
+
+                var url = $("<h3>")
+                url.text(brewery.website_url)
+                // console.log("url: " + brewery.website_url)
+
+                var beerCard = $("<div class='card'>");
+                beerCard.append(name, city, street, state, phone, url);
+
+                beerDiv.append(beerCard)
+                beerListContainer.html(beerDiv)
             })
-    })
-    // }
-    //else input is a word run this code City input 
-    // else {
-    var queryURLBeerCity = "https://api.openbrewerydb.org/breweries?by_city=" + city
-    console.log(queryURLBeerCity)
-    // }
+    })  
 }
+
+function getBreweriesCity(beer){
+    var queryURLBeerCity = "https://api.openbrewerydb.org/breweries?by_city=" + beer
+    $.ajax({
+            url: queryURLBeerCity,
+            method: "GET"
+        }).then(function(breweries){
+            var beerDiv = $("<div class = 'row' >")
+            breweries.forEach(function(brewery){
+            var name = $("<h3>")
+            name.text(brewery.name)
+            // console.log(brewery.name)
+            
+            var city = $("<h3>")
+            city.text(brewery.city)
+            // console.log(brewery.city)
+
+            var street = $("<h3>")
+            street.text(brewery.street)
+            // console.log(brewery.street)
+
+            var state = $("<h3>")
+            state.text(brewery.state)
+            // console.log(brewery.state)
+
+            var url = $("<h3>")
+            url.text(brewery.website_url)
+            url.attr("href", brewery.website_url)
+            // console.log(brewery.website_url)
+
+            var beerCard = $("<div class='card'>");
+            beerCard.append(name,city,street,state,url);
+
+            beerDiv.append(beerCard)
+            beerListContainer.html(beerDiv)
+            })
+        })
 }
-getBreweries();
+
+$("#beersearch-submit").click(function(event){
+    event.preventDefault();
+    var beerInput = $("#beersearch").val().trim();
+    
+    if(isNaN(beerInput)){
+    getBreweriesCity(beerInput);
+    // console.log("not an integer")
+    } 
+    else {
+        getBreweriesCode(beerInput);
+        // console.log("integer")
+    }
+    $("#beersearch")[0].reset();
+})
+
+//when you click on button, you are directed to a random beer. when you enter in the input field, you can search for a brewery near you by city or postal code  
+// https://api.punkapi.com/v2/beers/random
