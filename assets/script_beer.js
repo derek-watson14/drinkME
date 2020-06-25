@@ -77,15 +77,19 @@ function getBreweriesCity(beer){
         })
 }
 
-$("#beersearch-submit").click(function(){
+$("#beersearch-submit").click(function(event){
+    event.preventDefault();
     var beerInput = $("#beersearch").val().trim();
-    console.log("hi")
-    // if(beerInput === int(beerInput())){
-    // getBreweriesCode(beerInput);
-    // } 
-    // else{
-        getBreweriesCity(beerInput);
-    // }
+    
+    if(isNaN(beerInput)){
+    getBreweriesCity(beerInput);
+    console.log("not an integer")
+    } 
+    else {
+        getBreweriesCode(beerInput);
+        console.log("integer")
+    }
+    // $("#beersearch").reset();
 })
 
 
