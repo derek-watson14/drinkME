@@ -1,6 +1,7 @@
 
-var alcohol = "Vodka";
+var alcohol = "";
 var currentDrink = "";
+var drinks = [];
 var thumbnails = [];
 var recipe = "";
 var ingreds = [];
@@ -16,13 +17,18 @@ $.ajax({
   method: "GET"
 }).then(function(response) {
     console.log(response);
-    for (i = 0; i < 12; i++) { //generate 12 tiles with content from api
-        currentDrink = response.drinks[i].strDrink; // loops through all 12 drink tiles
-        getIngreds();
+    for (i = 0; i < 4; i++) { //generate 12 tiles with content from api
+        currentDrink = response.drinks[i].strDrink; 
+        console.log(currentDrink + " currentDrink");
+        drinks.push(currentDrink);
         var imgUrl = response.drinks[i].strDrinkThumb + "/preview";
-        console.log(imgUrl);
-        thumbnails.push(imgUrl); //makes first drink appear at index '0' in thumbnails
+        thumbnails.push(imgUrl);// loops through all 12 drink tiles
+        getIngreds();
+        
+        //console.log(thumbnails);
+         //makes first drink appear at index '0' in thumbnails
     }
+    console.log(drinks);
 });
 }
 
@@ -35,7 +41,7 @@ function getIngreds() {
         //console.log(response);
         var data = response.drinks[0];
         response.drinks[0].strIngredient1;
-        for (i = 1; i < 16; i++) {
+        for (i = 1; i < 5; i++) {
 
             var currentIng = response.drinks[0]["strIngredient" + i];
             var measureAmt = response.drinks[0]["strMeasure" + i];
@@ -46,8 +52,10 @@ function getIngreds() {
             } else {
             result += currentIng;
             }
-            //console.log(result);
+            ingreds.push(result);
+            
         }
+        console.log(ingreds);
     })
 }
 //getBooze();
@@ -55,17 +63,20 @@ function getIngreds() {
 //adds click listener, running methods with alcohol entered into search bar.
 $("#cocktailsearch-submit").on("click", function() {
     event.preventDefault();
+    $("#cocktaillist").empty();
     console.log("clicked");
     alcohol = $("#cocktailsearch").val();
     console.log(alcohol + " alcohol val");
     getBooze();
-    getIngreds();
+    // getIngreds();
 
     var newRow = $("<row>");
-    //for (i = 0; i < 4; i++) {
+    for (i = 0; i < 4; i++) {
         var drinkCard = $("<div class='card-horizontal col s12 m6'>");
         var newDiv2 = $("<div class='card-image'>");
-        var drinkImg = $("<img src='https://lorempixel.com/100/190/nature/6'>");
+        var drinkImg = $(`<img src=${thumbnails[i]}>`);
+        //drinkImg.attr("src", thumbnails[i]);
+        console.log(thumbnails[i]);
         newDiv2.append(drinkImg);
         drinkCard.append(newDiv2);
         // newDiv1.append(newDiv2);
@@ -73,7 +84,7 @@ $("#cocktailsearch-submit").on("click", function() {
         // drinkImg.attr("src", "https://lorempixel.com/100/190/nature/6");
         // newDiv2.append(drinkImg);
         newRow.append(drinkCard);
-   // }
+    }
    var cocktaillist = $("#cocktaillist")
     $(cocktaillist).append(newRow);
     // $("#cocktaillist").append(newRow);
