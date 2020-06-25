@@ -16,11 +16,12 @@
   <link rel="stylesheet" href="assets/style.css">
 </head>
 <body>
+  <div id="home"></div>
   <!-- Navbar -->
   <div class="navbar-fixed">
     <nav>
-      <div class="nav-wrapper">
-        <a id="home"  href="#home" class="brand-logo">drinkME</a>
+      <div class="nav-wrapper grey darken-4">
+        <a  href="#home" class="brand-logo">drinkME</a>
         <ul class="right hide-on-med-and-down">
           <li><a href="#home"><i class="material-icons">home</i></a></li>
           <li><a href="#cocktail"><i class="material-icons">local_bar</i></a></li>
@@ -35,8 +36,15 @@
         <!-- Fixed site name and button -->
         <div class="carousel-fixed-item">
           <div class="container logocontainer">
-            <h2>drinkME</h2>
-            <a class="btn waves-effect white grey-text darken-text-2">Search</a>
+            <h2 class="carousel-logo">drinkME</h2>
+            <div>
+              <a href="#cocktail" class="cocktail-btn btn waves-effect">
+                <i class="material-icons">local_bar</i>
+              </a>
+              <a href="#beer" class="beer-btn btn waves-effect right-car-btn">
+                <i class="material-icons">local_cafe</i>
+              </a>
+            </div>
           </div>
         </div>
         <!-- Explore Slide -->
@@ -81,12 +89,12 @@
     </div>
   </div>
   <!-- Cocktail Search -->
-  <div class="parallax-container">
+  <div id="cocktail" class="parallax-container">
     <div class="parallax cocktails"><img src="images/bartender.jpg"></div>
   </div>
   <div class="section white">
     <div class="row container">
-      <h2 id="cocktail" class="header">Cocktails</h2>
+      <h2 class="header">Cocktails</h2>
       <h6 class="grey-text text-darken-3 lighten-3">Create the perfect cocktail for you and your guest!</h6>
       <p class="grey-text text-darken-3 lighten-3">Search a type of liquor to generate a list of cocktails.</p>
     </div>
@@ -94,13 +102,13 @@
       <form class="col s12">
         <div class="container">
           <div class="row">
-            <div class="cocktail-inputs input-field col s10 l7">
+            <div class="cocktail-inputs input-field col s8 l7">
               <i class="material-icons prefix">local_bar</i>
               <input id="cocktailsearch" type="text">
-              <label for="cocktailsearch">Search for cocktails (alcohol type)</label>
+              <label for="cocktailsearch">Search for cocktails</label>
             </div>
             <div class="col s1">
-              <a id="cocktailsearch-submit" class="search-btn btn waves-effect white grey-text darken-text-2">Search</a>
+              <a id="cocktailsearch-submit" class="cocktail-btn search-btn btn waves-effect">Search</a>
             </div>
           </div>
         </div>
@@ -111,12 +119,12 @@
     </div>
   </div>
   <!-- Beer Search -->
-  <div class="parallax-container">
+  <div id="beer" class="parallax-container">
     <div class="parallax beer"><img src="images/beer.jpg"></div>
   </div>
   <div class="section white">
     <div class="row container">
-      <h2 id="beer" class="header">Beer</h2>
+      <h2 class="header">Beer</h2>
       <h6 class="grey-text text-darken-3 lighten-3">Choose the brew that fits your mood!</h6>
       <p class="grey-text text-darken-3 lighten-3">
         Search a city or zip code to discover breweries in that area.
@@ -126,13 +134,13 @@
       <form class="col s12">
         <div class="container">
           <div class="row">
-            <div class="beer-inputs input-field col s10 l7">
+            <div class="beer-inputs input-field col s8 l7">
               <i class="material-icons prefix">local_cafe</i>
               <input id="beersearch" type="text">
-              <label for="beersearch">Find a brewery (zip code or city)</label>
+              <label for="beersearch">Find a brewery</label>
             </div>
             <div class="col s1">
-              <a id="beersearch-submit" class="search-btn btn waves-effect white grey-text darken-text-2">Search</a>
+              <a id="beersearch-submit" class="beer-btn search-btn btn waves-effect">Search</a>
             </div>
           </div>
         </div>
@@ -155,6 +163,33 @@
       <li><a href="#home" class="btn-floating" id="floatBtn-home"><i class="material-icons">home</i></a></li>
     </ul>
   </div>
+  <!--Footer-->
+  <footer class="page-footer  grey darken-4">
+    <div class="container">
+      <div class="row">
+        <div class="col l6 s12">
+          <h5 class="white-text">drinkME</h5>
+          <p class="grey-text text-lighten-4">Here for a good time! Cheers!</p>
+        </div>
+        <div class="col l4 offset-l2 s12">
+          <h5 class="white-text">Built With:</h5>
+          <ul>
+            <li><a class="grey-text text-lighten-3" href="https://www.thecocktaildb.com/api/json/v1/1/search.php?s=">TheCocktailDB</a></li>
+            <li><a class="grey-text text-lighten-3" href="https://api.openbrewerydb.org/breweries?by_postal=">OpenBreweryDB</a></li>
+            <li><a class="grey-text text-lighten-3" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">Materialize</a></li>
+            <li><a class="grey-text text-lighten-3" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.5.2/animate.min.css">AnimateCSS</a></li> 
+            <li><a class="grey-text text-lighten-3" href="https://fonts.googleapis.com/css2?family=Poppins:wght@300&family=Roboto:wght@300&display=swap">Fonts</a></li>
+            <li><a class="grey-text text-lighten-3" href="https://github.com/derek-watson14/drinkME">GitHub</a></li>
+          </ul>
+        </div>
+      </div>
+    </div>
+    <div class="footer-copyright">
+      <div class="container">
+      © 2020 Copyright Text
+      </div>
+    </div>
+  </footer>
 
   <!-- jQuery -->
   <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>

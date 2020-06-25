@@ -16,7 +16,7 @@ $.ajax({
   url: queryURL,
   method: "GET"
 }).then(function(response) {
-    console.log(response);
+    //console.log(response);
     for (i = 0; i < 4; i++) { //generate 12 tiles with content from api
         currentDrink = response.drinks[i].strDrink; 
        //console.log(currentDrink + " currentDrink");
@@ -28,15 +28,32 @@ $.ajax({
         //console.log(thumbnails);
          //makes first drink appear at index '0' in thumbnails
     }
-    console.log(ingreds + " in getbooze");
+    //console.log(ingreds + " in getbooze");
     var newRow = $("<row>");
+    var ingredInd = 0;
+    var ingredientString = "";
     for (i = 0; i < 4; i++) {
-        var drinkCard = $("<div class='card-horizontal col s12 m6'>");
+        var drinkCard = $("<div class='card horizontal  beer-card col s12 m6 drinkTile'>");
         var newDiv2 = $("<div class='card-image'>");
         var drinkImg = $(`<img src=${thumbnails[i]}>`);
         var newH5 = $("<p>");
             newH5.html(drinks[i]);
-            console.log(drinks[i]);
+            //console.log(drinks[i]);
+            ingredientString = "";
+            for (j = ingredInd; j < ingredInd + 15; j++) { //0, til 14, exits, updates ingredInd by 15 to start at index 15
+                
+                if (ingreds[j] !== "null") {
+                    var currentVal = ingreds[j];
+                    ingredientString += ingreds[j] + " ";
+                    console.log(currentVal);
+                    
+                }
+            }
+            console.log(ingredientString);
+            ingredientString = "";
+            var newp = $("<p>");
+            newp.html(drinks[i]);
+            ingredInd += 15;
         //drinkImg.attr("src", thumbnails[i]);
         //console.log(thumbnails[i]);
         newDiv2.append(drinkImg, newH5);
@@ -44,7 +61,7 @@ $.ajax({
         newRow.append(drinkCard);
         
         //should iterate over the ingreds and add them to the image, might include null
-        console.log(ingreds[0] + " ingredients currently at j");
+        //console.log(ingreds[0] + " ingredients currently at j");
         // for (j = 0; j < ingreds.length; j+= 15) {
         //     // if (ingreds[j] !== null) {
         //     var newH5 = $("<h5>");
@@ -54,12 +71,8 @@ $.ajax({
         // }
             // }
         }
-        // newDiv1.append(newDiv2);
-        // var drinkImg = $("<img>");
-        // drinkImg.attr("src", "https://lorempixel.com/100/190/nature/6");
-        // newDiv2.append(drinkImg);
-        
-        ingreds = [];
+        console.log("hereeee");
+        //ingreds = [];
 
     
    var cocktaillist = $("#cocktaillist")
@@ -84,7 +97,7 @@ function getIngreds() {
 
             var result = "";
             if (measureAmt !== null) { //some amounts are null when all parts are equal
-             result += measureAmt + " of " + currentIng;
+             result += measureAmt + " : " + currentIng;
             } else {
             result += currentIng;
             }
@@ -97,13 +110,19 @@ function getIngreds() {
 }
 //getBooze();
 
+
+$(".drinkTile").on("click", function(event) {
+    event.preventDefault();
+
+})
+
 //adds click listener, running methods with alcohol entered into search bar.
 $("#cocktailsearch-submit").on("click", function() {
     event.preventDefault();
     $("#cocktaillist").empty();
-    console.log("clicked");
+    //console.log("clicked");
     alcohol = $("#cocktailsearch").val();
-    console.log(alcohol + " alcohol val");
+    //console.log(alcohol + " alcohol val");
     
 
     drinks = [];

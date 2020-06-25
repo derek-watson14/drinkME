@@ -27,9 +27,12 @@ p, a, .text-font {
   font-family: var(--text-font);
 }
 
+.right-car-btn {
+  margin-left: 12px !important;
+}
+
 /* * NavBar */
 .nav-wrapper {
-  background-color: var(--dm-charcoal);
   border-bottom: 1px solid var(--dm-white);
 }
 nav .brand-logo {
@@ -53,18 +56,36 @@ nav .material-icons:hover {
 #floatBtn-menu {
   background-color: var(--dm-darkbrown);
 }
+#floatBtn-menu:hover {
+  background-color: var(--dm-darkbrown);
+  filter: brightness(130%)
+}
 #floatBtn-beer {
   background-color: var(--dm-orange);
+}
+#floatBtn-beer:hover {
+  background-color: var(--dm-orange);
+  filter: brightness(115%)
 }
 #floatBtn-cocktail {
   background-color: var(--dm-yellow);
 }
+#floatBtn-cocktail:hover {
+  background-color: var(--dm-yellow);
+  filter: brightness(115%)
+}
 #floatBtn-home {
   background-color: var(--dm-pink);
 }
+#floatBtn-home:hover {
+  background-color: var(--dm-pink);
+  filter: brightness(104%)
+}
 
 /* * Carousel Styles */
-/* Project name and button */
+.carousel-logo {
+  color: var(--dm-white);
+}
 .logocontainer h2 {
   color: var(--dm-white);
   padding-left: 25px;
@@ -174,13 +195,21 @@ nav .material-icons:hover {
 .cocktail-inputs .prefix.active {
   color: var(--dm-yellow);
 }
-#cocktailsearch-submit.search-btn {
-  background-color: var(--dm-yellow) !important;
-  color: white !important;
+.cocktail-btn {
+  background-color: var(--dm-yellow);
+  color: white;
 }
-#beersearch-submit.search-btn {
-  background-color: var(--dm-orange) !important;
-  color: white !important;
+.cocktail-btn:hover {
+  background-color: var(--dm-yellow);
+  filter: brightness(120%);
+}
+.beer-btn {
+  background-color: var(--dm-orange);
+  color: white;
+}
+.beer-btn:hover {
+  background-color: var(--dm-orange);
+  filter: brightness(120%);
 }
 
 /* beer and cocktail cards */
@@ -207,3 +236,23 @@ nav .material-icons:hover {
   }
 }
 
+/*footer*/
+
+<style>
+    .page-footer {
+        background-color:#6a1807 !important;
+    }
+</style>
+
+
+
+body {
+  display: flex;
+  min-height: 100vh;
+  flex-direction: column;
+}
+
+main {
+  flex: 1 0 auto;
+}
+  
