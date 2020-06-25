@@ -99,7 +99,7 @@ $("#cocktailsearch-submit").on("click", function() {
     newA.attr("href", "htps://www.drizly.com");
     newA.text("Drizly it!");
     newDiv5.append(newA);
-    $("#beerlist").append(newDiv);
+    $("#cocktaillist").append(newDiv);
 
 
 //     <div class="col s12 m7">
