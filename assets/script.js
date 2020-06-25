@@ -111,11 +111,14 @@ function getIngreds(drink) {
 }
 //getBooze();
 
+var newRow = $("<row class='recipe'>");
 
 $("#cocktaillist").on("click", ".beer-card", function(event) {
     event.preventDefault();
     ingreds = [];
-    var newRow = $("<row>");
+    $("#cocktaillist").append(newRow);
+
+    newRow.empty();
     var drink = $(this).children(".drinkVal").text();
     console.log("clickt and val: " + drink);
     getIngreds(drink);
@@ -124,7 +127,7 @@ $("#cocktaillist").on("click", ".beer-card", function(event) {
     newh3.html(drink + " Recipe:");
     ingredsPane.append(newh3);
     newRow.append(ingredsPane);
-    $("#cocktaillist").append(newRow);
+    
 })
 
 //adds click listener, running methods with alcohol entered into search bar.
