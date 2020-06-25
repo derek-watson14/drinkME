@@ -17,4 +17,15 @@ document.addEventListener('DOMContentLoaded', function() {
   autoplay();
 });
 
+
+$("#floatBtn-beer").ready(function() {
+	$('#nav').onePageNav();
+});
+
+// $("#floatBtn-beer").click(function(event){
+//   event.preventDefault();
+//   console.log("hi")
+//   var beerLink = $("#floatBtn-beer")
+//   beerLink.attr("href", )
+// })
   

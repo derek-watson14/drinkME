@@ -1,62 +1,91 @@
-var city = "seattle";
-var code = "98101";
-var tag = "patio";
-var beerInput = $("#beersearch").val().trim();
-var queryURLBeerCode = "https://api.openbrewerydb.org/breweries?by_postal=" + beerInput
-    console.log(queryURLBeerCode)
-var queryURLBeerCity = "https://api.openbrewerydb.org/breweries?by_city=" + beerInput
-    console.log(queryURLBeerCity)
-// var beerContainer = 
 
-function getBreweries(){
-    // if input int run this code Code input === int(input())
-    if(beerInput === int(beerInput())){
+var beerListContainer = $("#beerlist")
+
+function getBreweriesCode(beer){
+    var queryURLBeerCode = "https://api.openbrewerydb.org/breweries?by_postal=" + beer
     $.ajax({
         url: queryURLBeerCode,
         method: "GET"
     }).then(function(breweries){
+        console.log(breweries)
+        var beerDiv = $("<div class = 'row' >")
             breweries.forEach(function(brewery){
-                var beerCard = $("<div class")
+                
                 var name = $("<h3>")
                 name.text(brewery.name)
                 console.log(brewery.name)
-                beerCard.append(name)
-
+                
                 var city = $("<h3>")
                 city.text(brewery.city)
                 console.log(brewery.city)
-                beerCard.append(city)
 
                 var street = $("<h3>")
                 street.text(brewery.street)
                 console.log(brewery.street)
-                beerCard.append(street)
 
-                var url = brewery.website_url
+                var state = $("<h3>")
+                state.text(brewery.state)
+
+
+                var url = $("<h3>")
+                url.text(brewery.website_url)
                 console.log(brewery.website_url)
-                beerCard.append(street)
+
+                var beerCard = $("<div class='card'>");
+                beerCard.append(name,city,street,state,url);
+
+                beerDiv.append(beerCard)
+                beerListContainer.html(beerDiv)
             })
     })  
 }
-    // else {
-    // $.ajax({
-    //     url: queryURLBeerCity,
-    //     method: "GET"
-    // }).then(function(breweries){
-    //         breweries.forEach(function(brewery){
-    //             var name = brewery.name
-    //             console.log(brewery.name)
 
-    //             var city = brewery.city
-    //             console.log(brewery.city)
+function getBreweriesCity(beer){
+    var queryURLBeerCity = "https://api.openbrewerydb.org/breweries?by_city=" + beer
+    $.ajax({
+            url: queryURLBeerCity,
+            method: "GET"
+        }).then(function(breweries){
+            var beerDiv = $("<div class = 'row' >")
+            breweries.forEach(function(brewery){
+            var name = $("<h3>")
+            name.text(brewery.name)
+            console.log(brewery.name)
+            
+            var city = $("<h3>")
+            city.text(brewery.city)
+            console.log(brewery.city)
 
-    //             var street = brewery.street
-    //             console.log(brewery.street)
+            var street = $("<h3>")
+            street.text(brewery.street)
+            console.log(brewery.street)
 
-    //             var url = brewery.website_url
-    //             console.log(brewery.website_url)
-    //         })
-    // })
-    // }
+            var state = $("<h3>")
+            state.text(brewery.state)
+            console.log(brewery.state)
+
+            var url = $("<h3>")
+            url.text(brewery.website_url)
+            console.log(brewery.website_url)
+
+            var beerCard = $("<div class='card'>");
+            beerCard.append(name,city,street,state,url);
+
+            beerDiv.append(beerCard)
+            beerListContainer.html(beerDiv)
+            })
+        })
 }
-getBreweries();
+
+$("#beersearch-submit").click(function(){
+    var beerInput = $("#beersearch").val().trim();
+    console.log("hi")
+    // if(beerInput === int(beerInput())){
+    // getBreweriesCode(beerInput);
+    // } 
+    // else{
+        getBreweriesCity(beerInput);
+    // }
+})
+
+
