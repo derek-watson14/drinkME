@@ -218,6 +218,16 @@ nav .material-icons:hover {
   overflow: scroll 
 }
 
+.beer-random-card{
+  font-weight: bold;
+  height: 400px;
+  overflow: scroll;
+}
+
+.beer-random-image{
+  max-height: 400px;
+}
+
 
 /* * Materialize Media Breakpoints */
 /* https://materializecss.com/grid.html#grid-responsive */
