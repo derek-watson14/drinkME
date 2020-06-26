@@ -326,27 +326,8 @@ var results = [
   }
 ];
 
-function initMap() {
-  beerMap = new google.maps.Map(document.getElementById('beer-map'), {
-    zoom: 10,
-    center: new google.maps.LatLng(47.6062095,-122.3320708),
-    streetViewControl: false,
-    scaleControl: false,
-    fullscreenControl: false,
-  });
-
-  cocktailMap = new google.maps.Map(document.getElementById('cocktail-map'), {
-    zoom: 10,
-    center: new google.maps.LatLng(47.6062095,-122.3320708),
-    streetViewControl: false,
-    scaleControl: false,
-    fullscreenControl: false,
-  });
-
-  placeMarkersBeer(results);
-}
-
 function makeMappable(results) {
+  // TODO check street, geocode street in map()
   return results.filter(function(item) {
     if (item.longitude && item.latitude) {
       return item;
@@ -362,19 +343,25 @@ function makeMappable(results) {
   })
 }
 
-function relocateMap(location) {
-  $.ajax({
-    url: `https://maps.googleapis.com/maps/api/geocode/json?address=${location}&sensor=true&key=AIzaSyAAydS0psLmxGTArqlZMhK88OOJyfrGfyg`,
-    method: 'GET',
-  }).then(function(res) {
-    var coords = res.results[0].geometry.location;
-    console.log(coords);
-  })
+var mappableResults = makeMappable(results)
+
+function initMap() {
+  beerMap = new google.maps.Map(document.getElementById('beer-map'), {
+    zoom: 10,
+    center: new google.maps.LatLng(47.6062095,-122.3320708),
+    mapTypeId: 'terrain'
+  });
+
+  cocktailMap = new google.maps.Map(document.getElementById('cocktail-map'), {
+    zoom: 10,
+    center: new google.maps.LatLng(47.6062095,-122.3320708),
+    mapTypeId: 'terrain'
+  });
+
+  placeMarkers();
 }
 
-function placeMarkersBeer(results, location){
-  relocateMap(location);
-  var mappableResults = makeMappable(results)
+function placeMarkers(){
   mappableResults.forEach(function(brewery) {
     var { name, address1, address2, website, coords } = brewery;
     var marker = new google.maps.Marker({
@@ -399,8 +386,3 @@ function placeMarkersBeer(results, location){
   })
 }
 
-$("#beer-map").click(function(event){
-  event.preventDefault();
-  var beerInput = $("#beersearch").val().trim();
-  placeMarkers(beerInput);
-})
