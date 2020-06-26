@@ -112,7 +112,6 @@ function getIngreds(drink) {
 //getBooze();
 
 var newRow = $("<row class='recipe'>");
-
 $("#cocktaillist").on("click", ".beer-card", function(event) {
     event.preventDefault();
     ingreds = [];
@@ -123,7 +122,8 @@ $("#cocktaillist").on("click", ".beer-card", function(event) {
     console.log("clickt and val: " + drink);
     getIngreds(drink);
     var ingredsPane = $("<div class='card horizontal  recipe-card col s12 m6'>");
-    var newh3 = $("<h3>");
+    ingredsPane.css("height", "300px");
+    var newh3 = $("<h5>");
     newh3.html(drink + " Recipe:");
     ingredsPane.append(newh3);
     newRow.append(ingredsPane);
