@@ -116,9 +116,17 @@
         </div>
       </form>
     </div>
-    <div class="row">
-      <div class="container" id="cocktaillist"></div>
-      <div class="container-flex" id="cocktail-map"></div>
+    <div class="container">
+      <div class="row">
+        <div class="col s12">
+          <ul class="tabs tabs-fixed-width">
+            <li class="tab col s3 offset-s6"><a href="#cocktaillist">Card View</a></li>
+            <li class="tab col s3"><a class="active" href="#cocktail-map">Map View</a></li>
+          </ul>
+        </div>
+        <div class="col s12" id="cocktaillist"></div>
+        <div class="col s12" id="cocktail-map"></div>
+      </div>
     </div>
   </div>
    
@@ -132,8 +140,8 @@
       <h6 class="grey-text text-darken-3 lighten-3">Choose the brew that fits your mood!</h6>
        <!-- random beer generator  -->
       <div class="row">
-        <div class="col s1">
-          <button class="random-beer beer-btn search-btn btn waves-effect">beerME</button>
+        <div class="col s3 random-beer-container">
+          <a class="random-beer beer-btn search-btn btn waves-effect">beerME</a>
         </div>
         <div class="col s12 l12">
           <div class="container" id="random-beer"></div>
@@ -150,26 +158,28 @@
         <div class="container">
           <div class="row">
             <div class="beer-inputs input-field col s8 l7">
-           <i class="material-icons prefix">local_cafe</i>
+              <i class="material-icons prefix">local_cafe</i>
               <input id="beersearch" type="text">
               <label for="beersearch">Find a brewery</label>
             </div>
-          </div>
-          <div class="row">
-            <div class="col s6 l1">
-              <a id="beersearch-submit-list" class="beer-btn search-btn btn waves-effect">list</a>
-            </div>
-            <div class="col s6 l1">
-              <a id="beersearch-submit-map" class="beer-btn search-btn btn waves-effect">map</a>
+            <div class="col s1">
+              <a id="beersearch-submit" class="random-beer beer-btn search-btn btn waves-effect">Search</a>
             </div>
           </div>
         </div>
       </form>
     </div>
-    <!-- beer list container -->
-    <div class="row">
-      <div class="container" id= "beerlist"></div>
-      <div class="container-flex" id="beer-map"></div>
+    <div class="container">
+      <div class="row">
+        <div class="col s12">
+          <ul class="tabs tabs-fixed-width">
+            <li class="tab col s3 offset-s6""><a href="#beerlist">Card View</a></li>
+            <li class="tab col s3"><a class="active" href="#beer-map">Map View</a></li>
+          </ul>
+        </div>
+        <div class="col s12" id= "beerlist"></div>
+        <div class="col s12" id="beer-map"></div>
+      </div>
     </div>
   </div>
 
