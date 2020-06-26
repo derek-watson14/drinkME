@@ -2,7 +2,6 @@
 var beerListContainer = $("#beerlist")
 var randomBeerContainer = $("#random-beer")
 
-
 function getBreweriesCode(beer){
     var queryURLBeerCode = "https://api.openbrewerydb.org/breweries?by_postal=" + beer
     $.ajax({
@@ -33,25 +32,20 @@ function getBreweriesCode(beer){
                 
                 var city = $("<h6>")
                 city.text(brewery.city)
-                // console.log("city: " + brewery.city)
 
                 var street = $("<h6>")
                 street.text(brewery.street)
-                // console.log("street: " + brewery.street)
 
                 var state = $("<h6>")
                 state.text(brewery.state)
-                // console.log("state: " + brewery.state)
 
                 var phone = $("<h6>")
                 phone.text("p: " + brewery.phone)
-                // console.log("phone: " + brewery.phone)
 
                 var beerCard = $("<div class='card col s12 l3 card-action beer-card'>");
                 beerCard.append(name, breweryType, city, street, state, phone);
 
                 beerDiv.append(beerCard)
-                
             })
             beerListContainer.html(beerDiv)
     })  
@@ -81,25 +75,20 @@ function getBreweriesCity(beer){
             
             var city = $("<h6>")
             city.text(brewery.city)
-            // console.log(brewery.city)
 
             var street = $("<h6>")
             street.text(brewery.street)
-            // console.log(brewery.street)
 
             var state = $("<h6>")
             state.text(brewery.state)
-            // console.log(brewery.state)
 
             var phone = $("<h6>")
             phone.text(brewery.phone)
-            // console.log("phone: " + brewery.phone)
 
             var beerCard = $("<div class='card col s12 l3 card-action beer-card'>");
             beerCard.append(name,city,street,state, phone);
 
             beerDiv.append(beerCard)
-            
             })
             beerListContainer.html(beerDiv)
     })
@@ -112,7 +101,7 @@ function sorry (){
 }
 
 //on button click
-$("#beersearch-submit-list").click(function(event){
+$("#beersearch-submit").click(function(event){
     event.preventDefault();
     var beerInput = $("#beersearch").val().trim();
 
@@ -133,6 +122,7 @@ $("#beersearch").on("keydown", function(e) {
     if(e.keyCode == 13)
         $("#beersearch-submit").click()
 });
+
 
 // PUNK API 
 // when you click on button, you are directed to a random beer. when you enter in the input field, you can search for a brewery near you by city or postal code  

@@ -24,6 +24,7 @@ function initMap() {
 }
 
 function makeMappable(results) {
+  // TODO check street, geocode street in map()
   return results.filter(function(item) {
     if (item.longitude && item.latitude) {
       return item;
@@ -75,3 +76,4 @@ function placeMarkersBeer(results, location){
     });
   })
 }
+
