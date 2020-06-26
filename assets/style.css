@@ -281,3 +281,21 @@ nav .material-icons:hover {
 }
 
   
+<style>
+    footer.footer-copyright {
+        position: relative;
+        height: 300px;
+        width: 100%;
+        background-color: #333333;
+    }
+
+    .container-copyright {
+        position: absolute;
+        width: 50%;
+        color: #fff;
+        line-height: 40px;
+        font-size: 0.7em;
+        text-align: center;
+        bottom:0;
+    }
+</style>
