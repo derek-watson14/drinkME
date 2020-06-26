@@ -16,9 +16,10 @@ function getBooze() {
         url: queryURL,
         method: "GET"
     }).then(function (response) {
-        //console.log(response);
+        console.log(response);
         //pick a random drink from the list
-        for (i = 0; i < 15; i++) { //generate 12 tiles with content from api
+        var drinksLength = response.drinks.length;
+        for (i = 0; i < drinksLength; i++) { //generate 12 tiles with content from api
             currentDrink = response.drinks[i].strDrink;
             //console.log(currentDrink + " currentDrink");
             drinks.push(currentDrink);
@@ -30,7 +31,7 @@ function getBooze() {
         var newRow = $("<row>");
         var ingredInd = 0;
         var ingredientString = "";
-        var randStart = Math.floor(Math.random() * 11);
+        var randStart = Math.floor(Math.random() * (drinksLength - 4)); // produces maximum allowable iteration for random drinks
         for (i = randStart; i < randStart + 4; i++) {
             var drinkCard = $("<div class='card horizontal  beer-card col s12 m6 drinkTile'>");
             var newDiv2 = $("<div class='card-image'>");
