@@ -1,5 +1,6 @@
 
 var beerListContainer = $("#beerlist")
+var randomBeerContainer = $("#random-beer")
 
 
 function getBreweriesCode(beer){
@@ -118,25 +119,48 @@ $("#beersearch-submit").click(function(event){
     $("#beersearch").empty();
 })
 
-//when you click on button, you are directed to a random beer. when you enter in the input field, you can search for a brewery near you by city or postal code  
-// $(button).click(function(event){
-//     var queryURLBeerRandom = "https://api.punkapi.com/v2/beers/random"
-//     event.preventDefault();
-//     $.ajax({
-//         url: queryURLBeerRandom,
-//         method: "GET"
-//     }).then(function(breweries){
-//         var randomBeerDiv = $("<div class = 'row' >")
+// when you click on button, you are directed to a random beer. when you enter in the input field, you can search for a brewery near you by city or postal code  
+function randomBeer(){
+    var queryURLBeerRandom = "https://api.punkapi.com/v2/beers/random"
+    $.ajax({
+        url: queryURLBeerRandom,
+        method: "GET"
+    }).then(function(breweries){
+        console.log(breweries)
+        var randomBeerDiv = $("<div class = 'row' >")
 
-//         var name = $("<h6>")
-//         name.text(breweries.name)
+        var name = $("<h6>")
+        name.text("beer name: " + breweries[0].name)
+        console.log(breweries[0].name)
 
-//         var tagline = $("<h6>")
-//         tagline.text(breweries.tagline)
+        var tagline = $("<h6>")
+        tagline.text("tagline: " + breweries[0].tagline)
+        console.log(breweries[0].tagline)
 
-//         var description = $("<h6>")
-//         description.text(breweries.abv)
+        var description = $("<h6>")
+        description.text("description: " + breweries[0].abv)
+        console.log(breweries[0].description)
+
+        var abv = $("<h6>")
+        abv.text(breweries[0].abv)
+
+        var imageURL = breweries[0].image_url
         
-//         var image = ("<img>")
-//         image.attr("href", breweries.image_url)
-// })
+        var image = $("<img>").attr("src", imageURL)
+        image.attr("src", breweries[0].image_url)
+
+        // var randomBeerImage = $("<div class = 'card-image' ")
+
+        var randomBeerCard = $("<div class='card horizontal col s12 l3 beer-card'>");
+        randomBeerCard.append(image, name,tagline,description,abv)
+
+        randomBeerDiv.append(randomBeerCard)
+        randomBeerContainer.html(randomBeerDiv)
+})
+}   
+
+$(".random-beer").click(function(event){
+    event.preventDefault();
+    randomBeer();
+    console.log("hi")
+})
