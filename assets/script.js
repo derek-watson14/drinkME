@@ -17,17 +17,21 @@ function getBooze() {
         method: "GET"
     }).then(function (response) {
         //console.log(response);
-        for (i = 0; i < 4; i++) { //generate 12 tiles with content from api
+        //pick a random drink from the list
+        for (i = 0; i < 15; i++) { //generate 12 tiles with content from api
             currentDrink = response.drinks[i].strDrink;
             //console.log(currentDrink + " currentDrink");
             drinks.push(currentDrink);
             var imgUrl = response.drinks[i].strDrinkThumb + "/preview";
             thumbnails.push(imgUrl);// loops through all 12 drink URLs
         }
+        console.log(drinks);
+        console.log(thumbnails);
         var newRow = $("<row>");
         var ingredInd = 0;
         var ingredientString = "";
-        for (i = 0; i < 4; i++) {
+        var randStart = Math.floor(Math.random() * 11);
+        for (i = randStart; i < randStart + 4; i++) {
             var drinkCard = $("<div class='card horizontal  beer-card col s12 m6 drinkTile'>");
             var newDiv2 = $("<div class='card-image'>");
             var drinkImg = $(`<img src=${thumbnails[i]}>`);
