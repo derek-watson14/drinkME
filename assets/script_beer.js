@@ -127,35 +127,53 @@ function randomBeer(){
         method: "GET"
     }).then(function(breweries){
         console.log(breweries)
-        var randomBeerDiv = $("<div class = 'row' >")
+        var cardContent = $("<div class = 'card-content'>")
+        var cardAction = $("<div class = 'card-action'>")
+        var cardStacked = $("<div class = 'card-stacked'>")
+        var cardImage = $("<div class = 'card-image beer-random-image'>")
+        var cardHorizontal = $("<div class = 'card horizontal beer-random-card'>")
 
-        var name = $("<h6>")
-        name.text("beer name: " + breweries[0].name)
+        var name = $("<a class='bold'>")
+        name.text(breweries[0].name)
         console.log(breweries[0].name)
-
-        var tagline = $("<h6>")
-        tagline.text("tagline: " + breweries[0].tagline)
+    
+        var tagline = $("<h6 class='bold'>")
+        tagline.text("' " + breweries[0].tagline + " '")
         console.log(breweries[0].tagline)
 
-        var description = $("<h6>")
+        var description = $("<h6 class='bold'>")
         description.text("description: " + breweries[0].abv)
         console.log(breweries[0].description)
 
-        var abv = $("<h6>")
-        abv.text(breweries[0].abv)
+        var yeast = $("<h6 class='bold'>")
+        yeast.text("yeast: " + breweries[0].ingredients.yeast)
 
-        var imageURL = breweries[0].image_url
+        var brewersTips = $("<h6 class='bold'>")
+        brewersTips.text("brewers tips: " + breweries[0].brewers_tips)
+
+        var foodPairings = $("<h6 class='bold'>")
+        foodPairings.text("food pairings: " + breweries[0].food_pairing)
+
+        var abv = $("<h6 class='bold'>")
+        abv.text("abv: " + breweries[0].abv)
+
+        var imageURL = breweries[0].image_url   
+        if (imageURL !==null ){
+            var image = $("<img>").attr("src", imageURL)
+            console.log("not null")
+        } else{
+            var imageURL = "https://media-cdn.tripadvisor.com/media/photo-s/07/89/d2/2a/sip-and-savor-tours.jpg"
+            var image = $("<img>").attr("src", imageURL)
+            console.log("null")
+        }
         
-        var image = $("<img>").attr("src", imageURL)
-        image.attr("src", breweries[0].image_url)
-
-        // var randomBeerImage = $("<div class = 'card-image' ")
-
-        var randomBeerCard = $("<div class='card horizontal col s12 l3 beer-card'>");
-        randomBeerCard.append(image, name,tagline,description,abv)
-
-        randomBeerDiv.append(randomBeerCard)
-        randomBeerContainer.html(randomBeerDiv)
+        cardAction.append(name)
+        cardContent.append(tagline, description, yeast, brewersTips, foodPairings, abv)
+        cardStacked.append(cardContent, cardAction)
+        cardImage.append(image)
+        
+        cardHorizontal.append(cardImage, cardStacked)
+        randomBeerContainer.html(cardHorizontal)
 })
 }   
 
