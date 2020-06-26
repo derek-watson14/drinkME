@@ -116,6 +116,7 @@
     </div>
     <div class="row">
       <div class="container" id="cocktaillist"></div>
+      <div class="container-flex" id="cocktail-map"></div>
     </div>
   </div>
   <!-- Beer Search -->
@@ -147,10 +148,8 @@
       </form>
     </div>
     <div class="row">
-      <div class="container" id= "beerlist">
-      </div>
-      <div class="container-flex" id= "map">
-      </div>
+      <div class="container" id= beerlist"></div>
+      <div class="container-flex" id="beer-map"></div>
     </div>
   </div>
 
@@ -201,9 +200,9 @@
   <script src="assets/display.js"></script>
   <!-- Mapping Logic -->
   <script src="assets/map.js"></script>
-  <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyAAydS0psLmxGTArqlZMhK88OOJyfrGfyg"></script>
-  
-    <!-- Database Logic -->
+  <script async defer src="https://maps.googleapis.com/maps/api/js?key=AIzaSyAAydS0psLmxGTArqlZMhK88OOJyfrGfyg&callback=initMap">
+  </script>
+  <!-- Database Logic -->
   <script src="assets/script.js"></script>
   <script src="assets/script_beer.js"></script>
 </body>

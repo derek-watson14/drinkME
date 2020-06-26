@@ -1,6 +1,6 @@
 // https://maps.googleapis.com/maps/api/geocode/json?address=seattle&sensor=true&key=AIzaSyAAydS0psLmxGTArqlZMhK88OOJyfrGfyg
 
-var map;
+var beerMap, cocktailMap;
 // * JSON Search Return Object
 // https://api.openbrewerydb.org/breweries?by_city=seattle
 var results = [
@@ -345,40 +345,43 @@ function makeMappable(results) {
 
 var mappableResults = makeMappable(results)
 
-function createMap() {
-  var script = document.createElement('script');
-  script.src = 'https://maps.googleapis.com/maps/api/js?key=AIzaSyAAydS0psLmxGTArqlZMhK88OOJyfrGfyg&callback=initMap';
-  script.defer = true;
-  script.async = true;
+function initMap() {
+  beerMap = new google.maps.Map(document.getElementById('beer-map'), {
+    zoom: 10,
+    center: new google.maps.LatLng(47.6062095,-122.3320708),
+    mapTypeId: 'terrain'
+  });
 
-  window.initMap = function() {
-    map = new google.maps.Map(document.getElementById('map'), {
-      zoom: 10,
-      center: new google.maps.LatLng(47.6062095,-122.3320708),
-      mapTypeId: 'terrain'
-    });
-    mappableResults.forEach(function(brewery) {
-      var { name, address1, address2, website, coords } = brewery;
-      var marker = new google.maps.Marker({
-        position: new google.maps.LatLng(coords),
-        map: map,
-        title: name,
-      })
-      var contentString = `
-        <div class="infowindow-container">
-          <h6>${name}<h6>
-          <p class="map-address">${address1}</p>
-          <p class="map-address">${address2}</p>
-          <a href="${website}" class="map-address">Website</p>
-        </div>
-      `;
-      var infowindow = new google.maps.InfoWindow({
-        content: contentString
-      });
-      marker.addListener('click', function() {
-        infowindow.open(map, marker);
-      });
+  cocktailMap = new google.maps.Map(document.getElementById('cocktail-map'), {
+    zoom: 10,
+    center: new google.maps.LatLng(47.6062095,-122.3320708),
+    mapTypeId: 'terrain'
+  });
+
+  placeMarkers();
+}
+
+function placeMarkers(){
+  mappableResults.forEach(function(brewery) {
+    var { name, address1, address2, website, coords } = brewery;
+    var marker = new google.maps.Marker({
+      position: new google.maps.LatLng(coords),
+      map: beerMap,
+      title: name,
     })
-  }
-  document.head.appendChild(script);
+    var contentString = `
+      <div class="infowindow-container">
+        <h6>${name}<h6>
+        <p class="map-address">${address1}</p>
+        <p class="map-address">${address2}</p>
+        <a href="${website}" class="map-address" target="_blank">Website</p>
+      </div>
+    `;
+    var infowindow = new google.maps.InfoWindow({
+      content: contentString
+    });
+    marker.addListener('click', function() {
+      infowindow.open(beerMap, marker);
+    });
+  })
 }
