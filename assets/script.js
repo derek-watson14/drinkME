@@ -88,9 +88,14 @@ function getIngreds(drink) {
         url: queryURL,
         method: "GET"
       }).then(function(response) {
+          console.log(response);
+          ingredsPane.empty();
         //console.log(response);
         var data = response.drinks[0];
         response.drinks[0].strIngredient1;
+        var newh5 = $("<h5>");
+        newh5.html(drink + " Recipe:");
+        ingredsPane.append(newh5);
         for (i = 1; i <= 15; i++) { //iterates over 15 ingredients and values
 
             var currentIng = response.drinks[0]["strIngredient" + i];
@@ -98,20 +103,31 @@ function getIngreds(drink) {
 
             var result = "";
             if (measureAmt !== null) { //some amounts are null when all parts are equal
-             result += measureAmt + " : " + currentIng;
-            } else {
-            result += currentIng;
+             result += measureAmt + " ";
             }
-            ingreds.push(result);
+            if (currentIng !== null) {
+                result += currentIng;
+            }
+             var newH3 = $("<h6>");
+             newH3.text(result);
+             ingredsPane.append(newH3);
+             //console.log(result)
+            } 
+            var newPrec = $("<p>");
+            var recipe = response.drinks[0].strInstructions;
+            newPrec.text(recipe);
+            console.log(newPrec);
+            ingredsPane.append(newPrec);
             
-        }
-        console.log(ingreds);
+        //console.log(ingreds);
         //console.log(ingreds);
     })
 }
 //getBooze();
 
 var newRow = $("<row class='recipe'>");
+var ingredsPane = $("<div class='card horizontal  recipe-card col s12 m12'>");
+
 $("#cocktaillist").on("click", ".beer-card", function(event) {
     event.preventDefault();
     ingreds = [];
@@ -120,12 +136,26 @@ $("#cocktaillist").on("click", ".beer-card", function(event) {
     newRow.empty();
     var drink = $(this).children(".drinkVal").text();
     console.log("clickt and val: " + drink);
-    getIngreds(drink);
-    var ingredsPane = $("<div class='card horizontal  recipe-card col s12 m6'>");
     ingredsPane.css("height", "300px");
-    var newh3 = $("<h5>");
-    newh3.html(drink + " Recipe:");
-    ingredsPane.append(newh3);
+    
+    ingredsPane.css("display", "flex");
+    ingredsPane.css("flex-direction", "column");
+    ingredsPane.css("align-items", "center");
+    
+    getIngreds(drink);
+        var ingredString = "";
+        //console.log(ingreds);
+        var newOl = $("<ol>");
+        // $.each(ingreds, function(){
+        //     //$('div').append(this);
+        //     console.log(this);
+        //     // if (currentValue !== "null") {
+        //     //     var newh3 = $("<h5>");
+        //     //     var ing = Object.toString(currentValue);
+        //     //     newh3.html(ing);
+        //     //     console.log(ing);
+        //     // }
+        // })
     newRow.append(ingredsPane);
     
 })
