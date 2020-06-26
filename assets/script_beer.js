@@ -9,6 +9,7 @@ function getBreweriesCode(beer){
         method: "GET"
     }).then(function(breweries){
         // console.log(breweries)
+        placeMarkersBeer(breweries, beer);
         var beerDiv = $("<div class = 'row' >")
             breweries.forEach(function(brewery){
                 var name = $("<a>")
@@ -56,6 +57,7 @@ function getBreweriesCity(beer){
             url: queryURLBeerCity,
             method: "GET"
         }).then(function(breweries){
+            placeMarkersBeer(breweries, beer);
             var beerDiv = $("<div class = 'row' >")
             breweries.forEach(function(brewery){
             var name = $("<a>")
