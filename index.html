@@ -4,6 +4,8 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>drinkME</title>
+  <!-- favicon icon  -->
+  <link rel="shortcut icon" href="https://i.ya-webdesign.com/images/alcohol-icon-png-16.png" type="image/x-icon">
   <!-- Fonts -->
   <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300&family=Roboto:wght@300&display=swap" rel="stylesheet">
   <!-- Font Awesome-->
@@ -130,15 +132,19 @@
       <h2 class="header">Beer</h2>
       <h6 class="grey-text text-darken-3 lighten-3">Choose the brew that fits your mood!</h6>
        <!-- random beer generator  -->
-       <div class="row">
-        <div class="col s12 l12">
+      <div class="row">
+        <div class="col s1">
           <button class="random-beer beer-btn search-btn btn waves-effect">beerME</button>
+        </div>
+        <div class="col s12 l12">
           <div class="container" id="random-beer"></div>
         </div>
       </div>
-      <p class="grey-text text-darken-3 lighten-3">
-        Search a city or zip code to discover breweries in that area.
-      </p>
+      <br>
+      <br>
+      <h6 class="grey-text text-darken-3 lighten-3">
+        Search a city or zip code to discover breweries in your area.
+      </h6>
     </div>
     <div class="row">
       <form class="col s12">
@@ -149,8 +155,13 @@
               <input id="beersearch" type="text">
               <label for="beersearch">Find a brewery</label>
             </div>
-            <div class="col s1">
-              <a id="beersearch-submit" class="beer-btn search-btn btn waves-effect">Search</a>
+          </div>
+          <div class="row">
+            <div class="col s6 l1">
+              <a id="beersearch-submit-list" class="beer-btn search-btn btn waves-effect">list</a>
+            </div>
+            <div class="col s6 l1">
+              <a id="beersearch-submit-map" class="beer-btn search-btn btn waves-effect">map</a>
             </div>
           </div>
         </div>
@@ -178,12 +189,12 @@
   <footer class="page-footer  grey darken-4">
     <div class="container">
       <div class="row">
-        <div class="col l6 s12">
+        <div class="col 14 s12">
           <h5 class="white-text">drinkME</h5>
           <p class="grey-text text-lighten-4">Here for a good time! Cheers!</p>
         </div>
-        <div class="col l4 offset-l2 s12">
-          <h5 class="white-text">Built With:</h5>
+        <div class="col 22 offset-14 s12">
+          <h6 class="white-text">Built With:</h6>
           <ul>
             <li><a class="grey-text text-lighten-3" href="https://www.thecocktaildb.com/api/json/v1/1/search.php?s=">TheCocktailDb</i></a></li>
             <li><a class="grey-text text-lighten-3" href="https://api.openbrewerydb.org/breweries?by_postal=">OpenBreweryDB</a></li>
@@ -192,11 +203,15 @@
             <li><a class="grey-text text-lighten-3" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.5.2/animate.min.css">AnimateCSS</a></li> 
             <li><a class="grey-text text-lighten-3" href="https://fonts.googleapis.com/css2?family=Poppins:wght@300&family=Roboto:wght@300&display=swap"><i class="fa fa-google" style="font-size:24px"></i></a></li>
             <li><a class="grey-text text-lighten-3" href="https://github.com/derek-watson14/drinkME"><i class="fa fa-github" style="font-size:24px"></i></a></li>
-            <br>
-            <br>
-            <br>
-            <li><a class="grey-text text-lighten-4">Created by: Derek, Nicole, Sam, Indy</a></li> 
           </ul>
+        </div>
+        <div class="col l4 s12">
+          <h6 class="white-text">Creators:</h6>
+          <li><a class="grey-text text-lighten-3" href="https://github.com/derek-watson14">Derek</i></a></li>
+          <li><a class="grey-text text-lighten-3" href="https://github.com/nicoleremy95">Nicole</i></a></li>
+          <li><a class="grey-text text-lighten-3" href="https://github.com/samugrose">Sam</i></a></li>
+          <li><a class="grey-text text-lighten-3" href="https://github.com/indyminhas">Indy</i></a></li>
+
         </div>
       </div>
     </div>
