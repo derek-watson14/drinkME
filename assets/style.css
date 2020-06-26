@@ -218,6 +218,16 @@ nav .material-icons:hover {
   overflow: scroll 
 }
 
+.beer-random-card{
+  font-weight: bold;
+  height: 400px;
+  overflow: scroll;
+}
+
+.beer-random-image{
+  max-height: 400px;
+}
+
 
 /* * Materialize Media Breakpoints */
 /* https://materializecss.com/grid.html#grid-responsive */
@@ -256,3 +266,21 @@ main {
   flex: 1 0 auto;
 }
   
+<style>
+    footer.footer-copyright {
+        position: relative;
+        height: 300px;
+        width: 100%;
+        background-color: #333333;
+    }
+
+    .container-copyright {
+        position: absolute;
+        width: 50%;
+        color: #fff;
+        line-height: 40px;
+        font-size: 0.7em;
+        text-align: center;
+        bottom:0;
+    }
+</style>

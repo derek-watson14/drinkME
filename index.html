@@ -6,6 +6,8 @@
   <title>drinkME</title>
   <!-- Fonts -->
   <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300&family=Roboto:wght@300&display=swap" rel="stylesheet">
+  <!-- Font Awesome-->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
   <!-- Icons -->
   <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
   <!-- Materialize -->
@@ -118,6 +120,7 @@
       <div class="container" id="cocktaillist"></div>
     </div>
   </div>
+   
   <!-- Beer Search -->
   <div id="beer" class="parallax-container">
     <div class="parallax beer"><img src="images/beer.jpg"></div>
@@ -126,6 +129,13 @@
     <div class="row container">
       <h2 class="header">Beer</h2>
       <h6 class="grey-text text-darken-3 lighten-3">Choose the brew that fits your mood!</h6>
+       <!-- random beer generator  -->
+       <div class="row">
+        <div class="col s12 l12">
+          <button class="random-beer beer-btn search-btn btn waves-effect">beerME</button>
+          <div class="container" id="random-beer"></div>
+        </div>
+      </div>
       <p class="grey-text text-darken-3 lighten-3">
         Search a city or zip code to discover breweries in that area.
       </p>
@@ -135,7 +145,7 @@
         <div class="container">
           <div class="row">
             <div class="beer-inputs input-field col s8 l7">
-              <i class="material-icons prefix">local_cafe</i>
+           <i class="material-icons prefix">local_cafe</i>
               <input id="beersearch" type="text">
               <label for="beersearch">Find a brewery</label>
             </div>
@@ -146,6 +156,7 @@
         </div>
       </form>
     </div>
+    <!-- beer list container -->
     <div class="row">
       <div class="container" id= "beerlist">
       </div>
@@ -174,24 +185,24 @@
         <div class="col l4 offset-l2 s12">
           <h5 class="white-text">Built With:</h5>
           <ul>
-            <li><a class="grey-text text-lighten-3" href="https://www.thecocktaildb.com/api/json/v1/1/search.php?s=">TheCocktailDB</a></li>
+            <li><a class="grey-text text-lighten-3" href="https://www.thecocktaildb.com/api/json/v1/1/search.php?s=">TheCocktailDb</i></a></li>
             <li><a class="grey-text text-lighten-3" href="https://api.openbrewerydb.org/breweries?by_postal=">OpenBreweryDB</a></li>
+            <li><a class="grey-text text-lighten-3" href="https://api.punkapi.com/v2/beers/random">PunkAPI</a></li>
             <li><a class="grey-text text-lighten-3" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">Materialize</a></li>
             <li><a class="grey-text text-lighten-3" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.5.2/animate.min.css">AnimateCSS</a></li> 
-            <li><a class="grey-text text-lighten-3" href="https://fonts.googleapis.com/css2?family=Poppins:wght@300&family=Roboto:wght@300&display=swap">Fonts</a></li>
-            <li><a class="grey-text text-lighten-3" href="https://github.com/derek-watson14/drinkME">GitHub</a></li>
+            <li><a class="grey-text text-lighten-3" href="https://fonts.googleapis.com/css2?family=Poppins:wght@300&family=Roboto:wght@300&display=swap"><i class="fa fa-google" style="font-size:24px"></i></a></li>
+            <li><a class="grey-text text-lighten-3" href="https://github.com/derek-watson14/drinkME"><i class="fa fa-github" style="font-size:24px"></i></a></li>
+            <br>
+            <br>
+            <br>
+            <li><a class="grey-text text-lighten-4">Created by: Derek, Nicole, Sam, Indy</a></li> 
           </ul>
         </div>
       </div>
     </div>
-    <div class="footer-creators">
-      <div class="container">
-      Creators: Derek, Nicole, Sam, Indy
-      </div>
-    </div>
     <div class="footer-copyright">
       <div class="container">
-      © 2020 Copyright
+      © Copyright 2020 drinkME
       </div>
     </div>
   </footer>
