@@ -8,10 +8,17 @@ var ingreds = [];
 var ingredsAmt = [];
 var newRow = $("<row class='recipe'>");
 var ingredsPane = $("<div class='card horizontal  recipe-card col s12 m12'>");
-var alcTypes = ["vodka", "gin", "tequila", "mezcal", "sweet vermouth", "dry vermouth", "scotch", "whisky",
+
+var alcTypes = ["vodka", "gin", "tequila", "sweet vermouth", "dry vermouth", "scotch", "whisky",
  "whiskey", "cognac", "rum", "beer", "cider", "amaretto", "lemon", "lime", "banana", "tea", "sloe gin", "bourbon", "everclear",
 "mint", "sugar", "salt", "tomato juice", "pineapple", "orange", "wine", "ginger", "grenadine", "peach schnapps", "banana liqueur",
-"jagermeister", "kahlua", "coffee", "cream", "red wine", "sweet and sour", ];
+"jagermeister", "kahlua", "coffee", "cream", "red wine", "sweet and sour" ];
+
+//var newcar
+$("#cocktaillist").append("<h3> No Results Yet</h3>");
+// ingredsPane.append("<h3>No Results Yet</h3>");
+// ingreds.css("display", "flex");
+// ingreds.css("justify-content", "center");
 //this function iterates through 12 drink choices, loads the thumbnails array with thumbnail img urls
 //and calls the getingreds function, which generates the ingredients of a given drink and the amts needed
 function getBooze() {
@@ -126,13 +133,15 @@ $("#cocktaillist").on("click", ".beer-card", function (event) {
 $("#cocktailsearch").on("keydown", function(e) { 
     if(e.keyCode == 13)
         $("#cocktailsearch-submit").click() 
+
+    console.log("clicked");
 });
 
 //adds click listener, running methods with alcohol entered into search bar.
 $("#cocktailsearch-submit").on("click", function () {
     event.preventDefault();
     $("#cocktaillist").empty();
-    //console.log("clicked");
+    console.log("clicked");
     alcohol = $("#cocktailsearch").val();
     drinks = [];
     thumbnails = [];
