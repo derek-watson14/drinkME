@@ -216,6 +216,17 @@ nav .material-icons:hover {
   overflow: scroll 
 }
 
+.beer-random-card{
+  font-weight: bold;
+  height: 400px;
+  overflow: scroll;
+}
+
+.beer-random-image{
+  max-height: 200px;
+  max-width: 200px;
+}
+
 /* * Maps */
 #beer-map {
   width: 100%;
@@ -233,7 +244,6 @@ nav .material-icons:hover {
 .map-address {
   font-size: 0.75em;
   margin: 0 0 5px 0;
-}
 
 
 /* * Materialize Media Breakpoints */
