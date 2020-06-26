@@ -8,7 +8,10 @@ var ingreds = [];
 var ingredsAmt = [];
 var newRow = $("<row class='recipe'>");
 var ingredsPane = $("<div class='card horizontal  recipe-card col s12 m12'>");
-
+var alcTypes = ["vodka", "gin", "tequila", "mezcal", "sweet vermouth", "dry vermouth", "scotch", "whisky",
+ "whiskey", "cognac", "rum", "beer", "cider", "amaretto", "lemon", "lime", "banana", "tea", "sloe gin", "bourbon", "everclear",
+"mint", "sugar", "salt", "tomato juice", "pineapple", "orange", "wine", "ginger", "grenadine", "peach schnapps", "banana liqueur",
+"jagermeister", "kahlua", "coffee", "cream", "red wine", "sweet and sour", ];
 //this function iterates through 12 drink choices, loads the thumbnails array with thumbnail img urls
 //and calls the getingreds function, which generates the ingredients of a given drink and the amts needed
 function getBooze() {
