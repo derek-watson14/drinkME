@@ -1,4 +1,4 @@
-
+//OPEN BREWERY API 
 var beerListContainer = $("#beerlist")
 var randomBeerContainer = $("#random-beer")
 
@@ -26,9 +26,9 @@ function getBreweriesCode(beer){
                     });
                 });
 
-                // var breweryType = $("<h7>")
-                // breweryType.text("type: " + brewery.brewery_type)
-                // console.log("type: " + brewery.brewery_type)
+                var breweryType = $("<h6>")
+                breweryType.text("type: " + brewery.brewery_type)
+                console.log("type: " + brewery.brewery_type)
                 
                 var city = $("<h6>")
                 city.text(brewery.city)
@@ -43,11 +43,11 @@ function getBreweriesCode(beer){
                 // console.log("state: " + brewery.state)
 
                 var phone = $("<h6>")
-                phone.text(brewery.phone)
+                phone.text("p: " + brewery.phone)
                 // console.log("phone: " + brewery.phone)
 
                 var beerCard = $("<div class='card col s12 l3 card-action beer-card'>");
-                beerCard.append(name, city, street, state, phone);
+                beerCard.append(name, breweryType, city, street, state, phone);
 
                 beerDiv.append(beerCard)
                 
@@ -73,8 +73,7 @@ function getBreweriesCity(beer){
                 $("a").hover(function(){
                     $(this).css("color", "#f8ccc6");
                 }, function (){
-                    $(this).css("color", "#6a1807");
-                
+                    $(this).css("color", "#6a1807");   
                 });
             });
             
@@ -104,21 +103,36 @@ function getBreweriesCity(beer){
     })
 }
 
-$("#beersearch-submit").click(function(event){
+function sorry (){
+    var sorry = $("<h6>")
+    sorry.text("please enter a city or a zip code, thanks!")
+    beerListContainer.append(sorry)
+}
+
+//on button click
+$("#beersearch-submit-list").click(function(event){
     event.preventDefault();
     var beerInput = $("#beersearch").val().trim();
-    
-    if(isNaN(beerInput)){
-    getBreweriesCity(beerInput);
-    // console.log("not an integer")
+
+    if (isNaN(beerInput)){
+        getBreweriesCity(beerInput);
     } 
+    else if (beerInput===""){
+        sorry();
+    }
     else {
         getBreweriesCode(beerInput);
-        // console.log("integer")
     }
     $("#beersearch").empty();
 })
 
+//on enter click
+$("#beersearch").on("keydown", function(e) {
+    if(e.keyCode == 13)
+        $("#beersearch-submit").click()
+});
+
+// PUNK API 
 // when you click on button, you are directed to a random beer. when you enter in the input field, you can search for a brewery near you by city or postal code  
 function randomBeer(){
     var queryURLBeerRandom = "https://api.punkapi.com/v2/beers/random"
