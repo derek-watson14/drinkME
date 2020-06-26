@@ -119,6 +119,11 @@ $("#cocktaillist").on("click", ".beer-card", function (event) {
 
 })
 
+$("#cocktailsearch").on("keydown", function(e) { 
+    if(e.keyCode == 13)
+        $("#cocktailsearch-submit").click() 
+});
+
 //adds click listener, running methods with alcohol entered into search bar.
 $("#cocktailsearch-submit").on("click", function () {
     event.preventDefault();
