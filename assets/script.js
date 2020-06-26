@@ -6,6 +6,8 @@ var thumbnails = [];
 var recipe = "";
 var ingreds = [];
 var ingredsAmt = [];
+var newRow = $("<row class='recipe'>");
+var ingredsPane = $("<div class='card horizontal  recipe-card col s12 m12'>");
 
 //this function iterates through 12 drink choices, loads the thumbnails array with thumbnail img urls
 //and calls the getingreds function, which generates the ingredients of a given drink and the amts needed
@@ -26,8 +28,8 @@ function getBooze() {
             var imgUrl = response.drinks[i].strDrinkThumb + "/preview";
             thumbnails.push(imgUrl);// loops through all 12 drink URLs
         }
-        console.log(drinks);
-        console.log(thumbnails);
+        //console.log(drinks);
+        //console.log(thumbnails);
         var newRow = $("<row>");
         var ingredInd = 0;
         var ingredientString = "";
@@ -38,7 +40,7 @@ function getBooze() {
             var drinkImg = $(`<img src=${thumbnails[i]}>`);
             var drinkVal = "drinkVal";
             var newH5 = $(`<p class='${drinkVal}'>`);
-            console.log("new h5 value: " + newH5);
+            //console.log("new h5 value: " + newH5);
             newH5.html(drinks[i]);
             newDiv2.append(drinkImg); //, newH5 (puts the title to the right of the img)
             drinkCard.append(newDiv2, newH5);
@@ -57,7 +59,7 @@ function getIngreds(drink) {
         url: queryURL,
         method: "GET"
     }).then(function (response) {
-        console.log(response);
+        //console.log(response);
         ingredsPane.empty();
         //console.log(response);
         var data = response.drinks[0];
@@ -87,14 +89,13 @@ function getIngreds(drink) {
         }
         ingredsPane.append("<h2>"); // to add a bit of space at end of recipe
         var recipe = response.drinks[0]["strInstructions"];
-        console.log(response.drinks[0].strInstructions);
+        //console.log(response.drinks[0].strInstructions);
         ingredsPane.prepend(`<p>${response.drinks[0]["strInstructions"]}<p>`);
         ingredsPane.prepend(newh5);
     })
 }
 
-var newRow = $("<row class='recipe'>");
-var ingredsPane = $("<div class='card horizontal  recipe-card col s12 m12'>");
+
 
 $("#cocktaillist").on("click", ".beer-card", function (event) {
     event.preventDefault();
