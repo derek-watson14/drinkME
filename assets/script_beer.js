@@ -101,7 +101,7 @@ function sorry (){
 }
 
 //on button click
-$("#beersearch-submit").click(function(event){
+$("#beersearch-submit-list").click(function(event){
     event.preventDefault();
     var beerInput = $("#beersearch").val().trim();
 
@@ -120,7 +120,7 @@ $("#beersearch-submit").click(function(event){
 //on enter click
 $("#beersearch").on("keydown", function(e) {
     if(e.keyCode == 13)
-        $("#beersearch-submit").click()
+        $("#beersearch-submit-list").click()
 });
 
 
