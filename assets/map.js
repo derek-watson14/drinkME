@@ -385,3 +385,9 @@ function placeMarkers(){
     });
   })
 }
+
+$("#beer-map").click(function(event){
+  event.preventDefault();
+  var beerInput = $("#beersearch").val().trim();
+  placeMarkers(beerInput);
+})

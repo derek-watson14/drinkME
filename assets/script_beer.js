@@ -110,7 +110,7 @@ function sorry (){
 }
 
 //on button click
-$("#beersearch-submit-list").click(function(event){
+$("#beersearch-submit").click(function(event){
     event.preventDefault();
     var beerInput = $("#beersearch").val().trim();
 

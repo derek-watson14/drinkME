@@ -140,13 +140,9 @@
       <h6 class="grey-text text-darken-3 lighten-3">Choose the brew that fits your mood!</h6>
        <!-- random beer generator  -->
       <div class="row">
-<<<<<<< HEAD
-        <button class="random-beer beer-btn search-btn btn waves-effect">beerME</button>
-=======
         <div class="col s3 random-beer-container">
           <a class="random-beer beer-btn search-btn btn waves-effect">beerME</a>
         </div>
->>>>>>> dev
         <div class="col s12 l12">
           <div class="container" id="random-beer"></div>
         </div>
@@ -177,11 +173,13 @@
       <div class="row">
         <div class="col s12">
           <ul class="tabs tabs-fixed-width">
-            <li class="tab col s3 offset-s6""><a href="#beerlist">Card View</a></li>
+            <li class="tab col s3 offset-s6""><a href="#beerlist" id="beersearch-submit-list" >Card View</a></li>
             <li class="tab col s3"><a class="active" href="#beer-map">Map View</a></li>
           </ul>
         </div>
-        <div class="col s12" id= "beerlist"></div>
+        <div class="col s12" id= "beerlist">
+          <h3>No Results Yet</h3>
+        </div>
         <div class="col s12" id="beer-map"></div>
       </div>
     </div>
