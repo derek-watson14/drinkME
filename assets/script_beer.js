@@ -8,7 +8,6 @@ function getBreweriesCode(beer){
         url: queryURLBeerCode,
         method: "GET"
     }).then(function(breweries){
-        // console.log(breweries)
         placeMarkersBeer(breweries, beer);
         var beerDiv = $("<div class = 'row' >")
             breweries.forEach(function(brewery){
@@ -22,7 +21,6 @@ function getBreweriesCode(beer){
                     $(this).css("color", "#f8ccc6");
                     }, function (){
                         $(this).css("color", "#6a1807");
-                
                     });
                 });
 
@@ -42,7 +40,6 @@ function getBreweriesCode(beer){
 
                 var beerCard = $("<div class='card col s12 l3 card-action beer-card'>");
                 beerCard.append(name, breweryType, city, street, state, phone);
-
                 beerDiv.append(beerCard)
             })
             beerListContainer.html(beerDiv)
