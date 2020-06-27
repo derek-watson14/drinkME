@@ -16,11 +16,7 @@ var alcTypes = ["vodka", "gin", "tequila", "sweet vermouth", "dry vermouth", "sc
 
 //var newcar
 $("#cocktaillist").append("<h3> No Results Yet</h3>");
-// ingredsPane.append("<h3>No Results Yet</h3>");
-// ingreds.css("display", "flex");
-// ingreds.css("justify-content", "center");
-//this function iterates through 12 drink choices, loads the thumbnails array with thumbnail img urls
-//and calls the getingreds function, which generates the ingredients of a given drink and the amts needed
+
 function getBooze() {
     var queryURL = "https://www.thecocktaildb.com/api/json/v1/1/filter.php?i=" + alcohol;
 
