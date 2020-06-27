@@ -114,7 +114,7 @@ $("#locate-stores").click(function() {
           });
         });
         cocktailMap.setCenter({lat: coords.latitude, lng: coords.longitude});
-        cocktailMap.setZoom(11);
+        cocktailMap.setZoom(10);
       }  
     })
   })

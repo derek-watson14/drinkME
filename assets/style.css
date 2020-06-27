@@ -216,20 +216,25 @@ nav .material-icons:hover {
 }
 .beer-btn {
   background-color: var(--dm-orange);
-  color: white;
+  color: white !important;
 }
 .beer-btn:hover {
   background-color: var(--dm-orange);
   filter: brightness(120%);
 }
+.beer-btn:active {
+  color: white;
+}
 
 /* * beer and cocktail cards */
 #cocktaillist, #beerlist {
   min-height: 350px;
+  max-height: 600px;
+  overflow-y: auto;
 }
 .beer-card{
   height: 200px;
-  overflow: scroll 
+  cursor: pointer;
 }
 .section .random-beer-container {
   padding: 0 ;
@@ -237,12 +242,12 @@ nav .material-icons:hover {
 .beer-random-card{
   font-weight: bold;
   height: 400px;
-  overflow: scroll;
+  overflow-y: auto;
 }
-
-.beer-random-image{
+.beer-random-card img {
   max-height: 200px;
   max-width: 200px;
+  padding: 5px;
 }
 
 /* * Maps */
