@@ -239,7 +239,7 @@ nav .material-icons:hover {
 
 .cocktail-card{
   height: 200px;
-  
+  cursor: pointer;
 }
 
 .section .random-beer-container {

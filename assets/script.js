@@ -45,16 +45,15 @@ function getBooze() {
         var ingredientString = "";
         var randStart = Math.floor(Math.random() * (drinksLength - 4)); // produces maximum allowable iteration for random drinks
         for (i = randStart; i < randStart + 4; i++) {
-            var drinkCard = $("<div class='card horizontal  cocktail-card col s12 m6 drinkTile'>");
-            var newDiv2 = $("<div class='card-content'>");
-            var drinkImg = $(`<img src=${thumbnails[i]} class="cocktail-card-img">`);
+            var drinkCard = $("<div class='card horizontal  beer-card col s12 m6 drinkTile'>");
+            var newDiv2 = $("<div class='card-image'>");
+            var drinkImg = $(`<img src=${thumbnails[i]}>`);
             var drinkVal = "drinkVal";
             var newH5 = $(`<p class='${drinkVal}'>`);
             //console.log("new h5 value: " + newH5);
             newH5.html(drinks[i]);
-            // newDiv2.append(drinkImg); //, newH5 (puts the title to the right of the img)
-            newDiv2.append(newH5)
-            drinkCard.append(drinkImg, newDiv2);
+            newDiv2.append(drinkImg); //, newH5 (puts the title to the right of the img)
+            drinkCard.append(newDiv2, newH5);
             newRow.append(drinkCard);
         }
         console.log("hereeee");
@@ -74,7 +73,7 @@ function getIngreds(drink) {
         ingredsPane.empty();
         //console.log(response);
         var data = response.drinks[0];
-        response.drinks[0].strIngredient1;
+        //response.drinks[0].strIngredient1;
         var newh5 = $("<h5>");
         newh5.html(drink + " Recipe:");
 
