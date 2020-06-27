@@ -104,7 +104,7 @@ function getIngreds(drink) {
 
 
 
-$("#cocktaillist").on("click", ".beer-card", function (event) {
+$("#cocktaillist").on("click", ".cocktail-card", function (event) {
     event.preventDefault();
     ingreds = [];
     $("#cocktaillist").append(newRow);
@@ -131,7 +131,7 @@ $("#cocktailsearch").on("keydown", function (e) {
     if (e.keyCode == 13)
         $("#cocktailsearch-submit").click()
 
-    console.log("clicked");
+    //console.log("clicked");
 });
 
 //adds click listener, running methods with alcohol entered into search bar.
