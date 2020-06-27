@@ -10,9 +10,9 @@ var newRow = $("<row class='recipe'>");
 var ingredsPane = $("<div class='card horizontal  recipe-card col s12 m12'>");
 
 var alcTypes = ["vodka", "gin", "tequila", "sweet vermouth", "dry vermouth", "scotch", "whisky",
- "whiskey", "cognac", "rum", "beer", "cider", "amaretto", "lemon", "lime", "banana", "tea", "sloe gin", "bourbon", "everclear",
-"mint", "sugar", "salt", "tomato juice", "pineapple", "orange", "wine", "ginger", "grenadine", "peach schnapps", "banana liqueur",
-"jagermeister", "kahlua", "coffee", "cream", "red wine", "sweet and sour" ];
+    "whiskey", "cognac", "rum", "beer", "cider", "amaretto", "lemon", "lime", "banana", "tea", "sloe gin", "bourbon", "everclear",
+    "mint", "sugar", "salt", "tomato juice", "pineapple", "orange", "wine", "ginger", "grenadine", "peach schnapps", "banana liqueur",
+    "jagermeister", "kahlua", "coffee", "cream", "red wine", "sweet and sour"];
 
 //var newcar
 $("#cocktaillist").append("<h3> No Results Yet</h3>");
@@ -94,7 +94,7 @@ function getIngreds(drink) {
                 newH3.text(result);
                 ingredsPane.append(newH3);
             }
-            
+
             //console.log(result)
         }
         ingredsPane.append("<h2>"); // to add a bit of space at end of recipe
@@ -130,9 +130,9 @@ $("#cocktaillist").on("click", ".beer-card", function (event) {
 
 })
 
-$("#cocktailsearch").on("keydown", function(e) { 
-    if(e.keyCode == 13)
-        $("#cocktailsearch-submit").click() 
+$("#cocktailsearch").on("keydown", function (e) {
+    if (e.keyCode == 13)
+        $("#cocktailsearch-submit").click()
 
     console.log("clicked");
 });
