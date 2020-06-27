@@ -228,6 +228,12 @@ nav .material-icons:hover {
   height: 200px;
   overflow: scroll 
 }
+
+.cocktail-card{
+  height: 200px;
+  
+}
+
 .section .random-beer-container {
   padding: 0 ;
 }
