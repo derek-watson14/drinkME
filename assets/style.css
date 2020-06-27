@@ -40,6 +40,9 @@ p, a, .text-font {
 .right-car-btn {
   margin-left: 12px !important;
 }
+.mr-5p {
+  margin-right: 6px;
+}
 
 /* * NavBar */
 .nav-wrapper {
@@ -120,7 +123,7 @@ nav .material-icons:hover {
 /* Images and content */
 .imgcontainer {
   height: 100%;
-  padding: 50px 0 0 30px;
+  padding: 35px 0 0 30px;
 }
 #find-imgcontainer{
   background-image: url("../images/find.jpg") !important;
@@ -143,7 +146,7 @@ nav .material-icons:hover {
 .imgcontainer p {
   position: relative;
   z-index: 2;
-  font-size: 1.25em !important;
+  font-size: 1.2em !important;
   width: 45%;
 }
 /* Cover to make text readable */
@@ -213,20 +216,25 @@ nav .material-icons:hover {
 }
 .beer-btn {
   background-color: var(--dm-orange);
-  color: white;
+  color: white !important;
 }
 .beer-btn:hover {
   background-color: var(--dm-orange);
   filter: brightness(120%);
 }
+.beer-btn:active {
+  color: white;
+}
 
 /* * beer and cocktail cards */
 #cocktaillist, #beerlist {
   min-height: 350px;
+  max-height: 600px;
+  overflow-y: auto;
 }
 .beer-card{
   height: 200px;
-  overflow: scroll 
+  cursor: pointer;
 }
 
 .cocktail-card{
@@ -240,12 +248,12 @@ nav .material-icons:hover {
 .beer-random-card{
   font-weight: bold;
   height: 400px;
-  overflow: scroll;
+  overflow-y: auto;
 }
-
-.beer-random-image{
+.beer-random-card img {
   max-height: 200px;
   max-width: 200px;
+  padding: 5px;
 }
 
 /* * Maps */
@@ -283,6 +291,9 @@ nav .material-icons:hover {
   body .opaque-cover {
     left: 5%;
     width: 90%;
+  }
+  .imgcontainer p {
+    width: 60%;
   }
 }
 
