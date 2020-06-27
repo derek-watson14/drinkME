@@ -47,7 +47,7 @@ function getBooze() {
         for (i = randStart; i < randStart + 4; i++) {
             var drinkCard = $("<div class='card horizontal  cocktail-card col s12 m6 drinkTile'>");
             var newDiv2 = $("<div class='card-content'>");
-            var drinkImg = $(`<img src=${thumbnails[i]}>`);
+            var drinkImg = $(`<img src=${thumbnails[i]} class="cocktail-card-img">`);
             var drinkVal = "drinkVal";
             var newH5 = $(`<p class='${drinkVal}'>`);
             //console.log("new h5 value: " + newH5);

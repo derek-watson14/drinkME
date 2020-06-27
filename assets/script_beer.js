@@ -184,5 +184,4 @@ function randomBeer(){
 $(".random-beer").click(function(event){
     event.preventDefault();
     randomBeer();
-    console.log("hi")
 })
