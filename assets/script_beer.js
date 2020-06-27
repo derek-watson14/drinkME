@@ -27,9 +27,7 @@ function getBreweriesCode(beer){
                 });
 
                 var breweryType = $("<h6>")
-                breweryType.text("type: " + brewery.brewery_type)
-                console.log("type: " + brewery.brewery_type)
-                
+                breweryType.text("type: " + brewery.brewery_type)                
                 var city = $("<h6>")
                 city.text(brewery.city)
 
