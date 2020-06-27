@@ -122,8 +122,8 @@
       <div class="row">
         <div class="col s12">
           <ul class="tabs tabs-fixed-width">
-            <li class="tab col s3 offset-s6"><a class="active" href="#cocktaillist">Card View</a></li>
-            <li class="tab col s3"><a href="#cocktail-map">Map View</a></li>
+            <li class="tab col s4 offset-s3 m3 offset-m6"><a class="active" href="#cocktaillist"><div class="valign-wrapper"><i class="mr-5p material-icons">grid_on</i> List View</div></a></li>
+            <li id="locate-stores" class="tab col s4 m3"><a href="#cocktail-map"><div class="valign-wrapper"><i class="mr-5p material-icons">place</i> Stores</div></a></li>
           </ul>
         </div>
         <div class="col s12" id="cocktaillist"></div>
@@ -175,8 +175,8 @@
       <div class="row">
         <div class="col s12">
           <ul class="tabs tabs-fixed-width">
-            <li class="tab col s3 offset-s6""><a class="active" href="#beerlist">Card View</a></li>
-            <li class="tab col s3"><a href="#beer-map">Map View</a></li>
+            <li class="tab col s4 offset-s3 m3 offset-m6"><a class="active" href="#beerlist"><div class="valign-wrapper"><i class="mr-5p material-icons">grid_on</i> List View</div></a></li>
+            <li class="tab col s4 m3"><a href="#beer-map"><div class="valign-wrapper"><i class="mr-5p material-icons">place</i> Map View</div></a></li>
           </ul>
         </div>
         <div class="col s12" id= "beerlist">
@@ -243,7 +243,7 @@
   <script src="assets/display.js"></script>
   <!-- Mapping Logic -->
   <script src="assets/map.js"></script>
-  <script async defer src="https://maps.googleapis.com/maps/api/js?key=AIzaSyAAydS0psLmxGTArqlZMhK88OOJyfrGfyg&callback=initMap">
+  <script async defer src="https://maps.googleapis.com/maps/api/js?key=AIzaSyAAydS0psLmxGTArqlZMhK88OOJyfrGfyg&callback=initMap&libraries=places">
   </script>
   <!-- Database Logic -->
   <script src="assets/script.js"></script>
