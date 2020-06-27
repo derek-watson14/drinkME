@@ -172,6 +172,37 @@ nav .material-icons:hover {
 .search-btn {
   margin-top: 18px;
 }
+
+/* * Tabs */
+/* Beer */
+.beer-tabs .tab a {
+  color: rgba(166, 62, 14, 0.7) !important;
+}
+.beer-tabs .tab a:hover {
+  color: var(--dm-orange);
+}
+.beer-tabs .tab a:focus.active {
+  color: var(--dm-orange);
+  background-color: rgba(166, 62, 14, 0.2);
+}
+.beer-tabs .indicator {
+  background-color: var(--dm-orange);
+}
+/* Cocktails */
+.cocktail-tabs .tab a {
+  color: rgba(227, 157, 90, 0.7) !important;
+}
+.cocktail-tabs .tab a:hover {
+  color: var(--dm-yellow);
+}
+.cocktail-tabs .tab a:focus.active {
+  color: var(--dm-yellow);
+  background-color: rgba(227, 157, 90, 0.2);
+}
+.cocktail-tabs .indicator {
+  background-color: var(--dm-yellow);
+}
+
 /* * Input fields */
 .center-form {
   display: flex;
@@ -227,9 +258,14 @@ nav .material-icons:hover {
 }
 
 /* * beer and cocktail cards */
-#cocktaillist, #beerlist {
+#beerlist {
   min-height: 350px;
   max-height: 600px;
+  overflow-y: auto;
+}
+#cocktaillist {
+  min-height: 350px;
+  max-height: 800px;
   overflow-y: auto;
 }
 .beer-card{
@@ -242,8 +278,12 @@ nav .material-icons:hover {
   cursor: pointer;
 }
 
+.recipe-card {
+  overflow: auto !important;
+}
+
 .section .random-beer-container {
-  padding: 0 ;
+  padding: 0;
 }
 .beer-random-card{
   font-weight: bold;
@@ -296,23 +336,3 @@ nav .material-icons:hover {
     width: 60%;
   }
 }
-
-  
-<style>
-    footer.footer-copyright {
-        position: relative;
-        height: 300px;
-        width: 100%;
-        background-color: #333333;
-    }
-
-    .container-copyright {
-        position: absolute;
-        width: 50%;
-        color: #fff;
-        line-height: 40px;
-        font-size: 0.7em;
-        text-align: center;
-        bottom:0;
-    }
-</style>

@@ -12,14 +12,16 @@ function initMap() {
     streetViewControl: false,
     scaleControl: false,
     fullscreenControl: false,
+    mapTypeControl: false,
   });
-
+  
   cocktailMap = new google.maps.Map(document.getElementById('cocktail-map'), {
     zoom: 3,
     center: new google.maps.LatLng(37.0902,-95.7129),
     streetViewControl: false,
     scaleControl: false,
     fullscreenControl: false,
+    mapTypeControl: false,
   });
 
   storeLocator = new google.maps.places.PlacesService(cocktailMap);
@@ -30,7 +32,7 @@ function makeMappable(results) {
   return results.filter(function(item) {
     if (item.longitude && item.latitude) {
       return item;
-    }
+    } 
   }).map(function(item) {
     return {
       name: item.name,
@@ -55,7 +57,8 @@ function relocateBeerMap(location) {
 
 function placeMarkersBeer(results, location){
   relocateBeerMap(location);
-  var mappableResults = makeMappable(results)
+  var mappableResults = makeMappable(results);
+  var infowindows = [];
   mappableResults.forEach(function(brewery, i) {
     var { name, address1, address2, website, coords } = brewery;
     var marker = new google.maps.Marker({
@@ -74,7 +77,9 @@ function placeMarkersBeer(results, location){
     var infowindow = new google.maps.InfoWindow({
       content: contentString
     });
+    infowindows.push(infowindow);
     marker.addListener('click', function() {
+      infowindows.forEach(window => window.close());
       infowindow.open(beerMap, marker);
     });
   })
@@ -90,6 +95,7 @@ $("#locate-stores").click(function() {
     // https://stackoverflow.com/questions/33464173/google-map-places-javascript-text-search-cant-get-radius-to-work
     storeLocator.textSearch(request, function(results, status) { 
       if (status === google.maps.places.PlacesServiceStatus.OK) {
+        var infowindows = [];
         results.forEach(function(place) {
           var addressAry = place.formatted_address.split(", ");
           var address1 = addressAry[0];
@@ -109,7 +115,9 @@ $("#locate-stores").click(function() {
           var infowindow = new google.maps.InfoWindow({
             content: contentString
           });
+          infowindows.push(infowindow);
           marker.addListener('click', function() {
+            infowindows.forEach(window => window.close());
             infowindow.open(cocktailMap, marker);
           });
         });
