@@ -10,13 +10,17 @@ var newRow = $("<row class='recipe'>");
 var ingredsPane = $("<div class='card horizontal  recipe-card col s12 m12'>");
 
 var alcTypes = ["vodka", "gin", "tequila", "sweet vermouth", "dry vermouth", "scotch", "whisky",
-    "whiskey", "cognac", "rum", "beer", "cider", "amaretto", "lemon", "lime", "banana", "tea", "sloe gin", "bourbon", "everclear",
-    "mint", "sugar", "salt", "tomato juice", "pineapple", "orange", "wine", "ginger", "grenadine", "peach schnapps", "banana liqueur",
-    "jagermeister", "kahlua", "coffee", "cream", "red wine", "sweet and sour"];
+ "whiskey", "cognac", "rum", "beer", "cider", "amaretto", "lemon", "lime", "banana", "tea", "sloe gin", "bourbon", "everclear",
+"mint", "sugar", "salt", "tomato juice", "pineapple", "orange", "wine", "ginger", "grenadine", "peach schnapps", "banana liqueur",
+"jagermeister", "kahlua", "coffee", "cream", "red wine", "sweet and sour" ];
 
 //var newcar
 $("#cocktaillist").append("<h3> No Results Yet</h3>");
-
+// ingredsPane.append("<h3>No Results Yet</h3>");
+// ingreds.css("display", "flex");
+// ingreds.css("justify-content", "center");
+//this function iterates through 12 drink choices, loads the thumbnails array with thumbnail img urls
+//and calls the getingreds function, which generates the ingredients of a given drink and the amts needed
 function getBooze() {
     var queryURL = "https://www.thecocktaildb.com/api/json/v1/1/filter.php?i=" + alcohol;
 
@@ -41,16 +45,15 @@ function getBooze() {
         var ingredientString = "";
         var randStart = Math.floor(Math.random() * (drinksLength - 4)); // produces maximum allowable iteration for random drinks
         for (i = randStart; i < randStart + 4; i++) {
-            var drinkCard = $("<div class='card horizontal  cocktail-card col s12 m6 drinkTile'>");
-            var newDiv2 = $("<div class='card-content'>");
-            var drinkImg = $(`<img src=${thumbnails[i]} class="cocktail-card-img">`);
+            var drinkCard = $("<div class='card horizontal  beer-card col s12 m6 drinkTile'>");
+            var newDiv2 = $("<div class='card-image'>");
+            var drinkImg = $(`<img src=${thumbnails[i]}>`);
             var drinkVal = "drinkVal";
             var newH5 = $(`<p class='${drinkVal}'>`);
             //console.log("new h5 value: " + newH5);
             newH5.html(drinks[i]);
-            // newDiv2.append(drinkImg); //, newH5 (puts the title to the right of the img)
-            newDiv2.append(newH5)
-            drinkCard.append(drinkImg, newDiv2);
+            newDiv2.append(drinkImg); //, newH5 (puts the title to the right of the img)
+            drinkCard.append(newDiv2, newH5);
             newRow.append(drinkCard);
         }
         console.log("hereeee");
@@ -70,7 +73,7 @@ function getIngreds(drink) {
         ingredsPane.empty();
         //console.log(response);
         var data = response.drinks[0];
-        response.drinks[0].strIngredient1;
+        //response.drinks[0].strIngredient1;
         var newh5 = $("<h5>");
         newh5.html(drink + " Recipe:");
 
@@ -91,7 +94,7 @@ function getIngreds(drink) {
                 newH3.text(result);
                 ingredsPane.append(newH3);
             }
-
+            
             //console.log(result)
         }
         ingredsPane.append("<h2>"); // to add a bit of space at end of recipe
@@ -104,7 +107,7 @@ function getIngreds(drink) {
 
 
 
-$("#cocktaillist").on("click", ".cocktail-card", function (event) {
+$("#cocktaillist").on("click", ".beer-card", function (event) {
     event.preventDefault();
     ingreds = [];
     $("#cocktaillist").append(newRow);
@@ -127,11 +130,11 @@ $("#cocktaillist").on("click", ".cocktail-card", function (event) {
 
 })
 
-$("#cocktailsearch").on("keydown", function (e) {
-    if (e.keyCode == 13)
-        $("#cocktailsearch-submit").click()
+$("#cocktailsearch").on("keydown", function(e) { 
+    if(e.keyCode == 13)
+        $("#cocktailsearch-submit").click() 
 
-    //console.log("clicked");
+    console.log("clicked");
 });
 
 //adds click listener, running methods with alcohol entered into search bar.
