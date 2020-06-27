@@ -154,6 +154,18 @@ function randomBeer(){
 
         var foodPairings = $("<h6 class='bold'>")
         foodPairings.text("food pairings: " + breweries[0].food_pairing)
+        // console.log("food pairings: " + breweries[0].food_pairing)
+
+        //for every item in the array,  create a list item 
+        // var foodPairingsArray = breweries[0].food_pairing;
+        // foodPairingsArray.forEach(function(item){
+        //     var list = $("<ul>")
+        //     var newlistItem = $("<li>")
+        //     newlistItem.text(breweries[item].foodPairing)
+        //     console.log(breweries[item].foodPairing)
+        //     list.append(newlistItem)
+        //     foodPairings.append(list)
+        // })
 
         var abv = $("<h6 class='bold'>")
         abv.text("abv: " + breweries[0].abv)
