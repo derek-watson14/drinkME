@@ -114,8 +114,23 @@ $("#beersearch-submit-list").click(function(event){
 
 //on enter click
 $("#beersearch").on("keydown", function(e) {
-    if(e.keyCode == 13)
-        $("#beersearch-submit-list").click()
+    
+    if(e.keyCode == 13){
+        e.preventDefault();
+    var beerInput = $("#beersearch").val().trim();
+
+    if (isNaN(beerInput)){
+        getBreweriesCity(beerInput);
+    } 
+    else if (beerInput===""){
+        sorry();
+    }
+    else {
+        getBreweriesCode(beerInput);
+    }
+    $("#beersearch").empty();
+    }
+       // $("#beersearch-submit-list").click()
 });
 
 
@@ -152,21 +167,25 @@ function randomBeer(){
         var brewersTips = $("<h6 class='bold'>")
         brewersTips.text("brewers tips: " + breweries[0].brewers_tips)
 
+        var foodPairingsDiv = $("<div>")
         var foodPairings = $("<h6 class='bold'>")
-        foodPairings.text("food pairings: " + breweries[0].food_pairing)
+        foodPairings.text("Food Pairings: ")
+        // foodPairings.text("food pairings: " + breweries[0].food_pairing)
         // console.log("food pairings: " + breweries[0].food_pairing)
 
-        //for every item in the array,  create a list item 
-        // var foodPairingsArray = breweries[0].food_pairing;
-        // foodPairingsArray.forEach(function(item){
-        //     var list = $("<ul>")
-        //     var newlistItem = $("<li>")
-        //     newlistItem.text(breweries[item].foodPairing)
-        //     console.log(breweries[item].foodPairing)
-        //     list.append(newlistItem)
-        //     foodPairings.append(list)
-        // })
-
+        // for every item in the array,  create a list item 
+        var foodPairingsArray = breweries[0].food_pairing;
+        var list = $("<ul>")
+        foodPairingsArray.forEach(function(item){
+            
+            var newlistItem = $("<li>")
+            newlistItem.text("- "+item)
+            console.log(item)
+            list.append(newlistItem)
+            
+        })
+        foodPairingsDiv.append(foodPairings, list)
+           
         var abv = $("<h6 class='bold'>")
         abv.text("abv: " + breweries[0].abv)
 
@@ -181,7 +200,7 @@ function randomBeer(){
         }
         
         cardAction.append(name)
-        cardContent.append(tagline, description, yeast, brewersTips, foodPairings, abv)
+        cardContent.append(tagline, description, yeast, brewersTips, foodPairingsDiv, abv)
         cardStacked.append(cardContent, cardAction)
         cardImage.append(image)
         
