@@ -170,16 +170,14 @@ function randomBeer(){
         var foodPairingsDiv = $("<div>")
         var foodPairings = $("<h6 class='bold'>")
         foodPairings.text("Food Pairings: ")
-        // foodPairings.text("food pairings: " + breweries[0].food_pairing)
-        // console.log("food pairings: " + breweries[0].food_pairing)
 
         // for every item in the array,  create a list item 
         var foodPairingsArray = breweries[0].food_pairing;
         var list = $("<ul>")
         foodPairingsArray.forEach(function(item){
             
-            var newlistItem = $("<li>")
-            newlistItem.text("- "+item)
+            var newlistItem = $("<li class='text-font'>")
+            newlistItem.text(item)
             console.log(item)
             list.append(newlistItem)
             
