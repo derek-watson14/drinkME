@@ -295,9 +295,11 @@ nav .material-icons:hover {
   max-width: 200px;
   padding: 5px;
 }
+
 .bold{
   font-weight: bold;
 }
+
 
 /* * Maps */
 #beer-map {
