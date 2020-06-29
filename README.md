@@ -4,6 +4,13 @@ Don’t feel like going out to a bar or restaurant with your friends to grab a d
 
 This application uses four APIs; Google , Punk, Open Brewery, and CocktailDB. For style, we used Materialize.
 
+We have three methods of quick navigation around the page. The first is the nav bar, the second are the floating buttons in the corner, and the third is the drinkME title in the top left corner. 
+
+The cocktail section 
+
+The beer section uses PUNK API to generate a random beer for the user. Then, the user can use the input field to find a brewery near them to enjoy their beer. 
+
+
 
 ## Images of Completed Website 
 
